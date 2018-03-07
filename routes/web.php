@@ -12,9 +12,12 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('public.beranda');
 });
 
-Route::get('/tes', function () {
-    return view('welcome');
+Route::get('/admin', function () {
+    return view('admin.beranda');
+});
+Route::get('/admin/daftar_pemohon', function () {
+    return view('admin.daftar_pemohon');
 });
