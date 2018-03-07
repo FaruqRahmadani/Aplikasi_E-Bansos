@@ -23,9 +23,10 @@ class CreatePemohonsTable extends Migration
       $table->string('alamat');
       $table->string('rt');
       $table->string('rw');
-      $table->string('kelurahan');
-      $table->string('kecamatan');
-      $table->string('kota');
+      $table->integer('provinsi_id');
+      $table->integer('kota_id');
+      $table->integer('kecamatan_id');
+      $table->integer('kelurahan_id');
       $table->timestamps();
     });
   }

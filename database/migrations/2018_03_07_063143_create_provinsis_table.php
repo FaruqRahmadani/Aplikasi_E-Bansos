@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateInstansisTable extends Migration
+class CreateProvinsisTable extends Migration
 {
   /**
   * Run the migrations.
@@ -13,14 +13,9 @@ class CreateInstansisTable extends Migration
   */
   public function up()
   {
-    Schema::create('instansis', function (Blueprint $table) {
+    Schema::create('provinsis', function (Blueprint $table) {
       $table->increments('id');
-      $table->string('nama');
-      $table->string('alamat');
-      $table->string('rt');
-      $table->string('rw');
-      $table->integer('kecamatan_id');
-      $table->integer('kelurahan_id');
+      $table->string('nama_provinsi');
       $table->timestamps();
     });
   }
@@ -32,6 +27,6 @@ class CreateInstansisTable extends Migration
   */
   public function down()
   {
-    Schema::dropIfExists('instansis');
+    Schema::dropIfExists('provinsis');
   }
 }
