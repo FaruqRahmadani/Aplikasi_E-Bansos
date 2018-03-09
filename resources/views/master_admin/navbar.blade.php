@@ -5,7 +5,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span></button>
-      <a class="navbar-brand" href="/admin"><span><img src="{{ URL::asset('assets/images/bjb.png')}}" style="width:22px;" alt="logo"></span> &nbsp; E - Bansos </a>
-    </div>
-  </div><!-- /.container-fluid -->
-</nav>
+        <a class="navbar-brand" href="/admin"><span><img src="{{ URL::asset('assets/images/bjb.png')}}" style="width:22px;" alt="logo"></span> &nbsp; E - Bansos </a>
+      </div>
+    </div><!-- /.container-fluid -->
+  </nav>

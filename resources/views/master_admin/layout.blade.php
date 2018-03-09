@@ -4,22 +4,22 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>@yield('title')</title>
-   @include('master_admin.asset')
+	@include('master_admin.asset')
 
 </head>
 <body>
-  {{-- navbar --}}
+	{{-- navbar --}}
 	@include('master_admin.navbar')
-  {{-- batas navbar --}}
+	{{-- batas navbar --}}
 
-  {{-- sidebar --}}
+	{{-- sidebar --}}
 	@include('master_admin.sidebar')
-  {{-- batas sidebar --}}
+	{{-- batas sidebar --}}
 
-  {{-- content container custom --}}
+	{{-- content container custom --}}
 	<div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">
 
-    {{-- breadcrumb --}}
+		{{-- breadcrumb --}}
 		<div class="row">
 			<ol class="breadcrumb">
 				<li><a href="/admin">
@@ -33,7 +33,7 @@
 		{{-- page header --}}
 		<div class="row">
 			<div class="col-lg-12">
-				<h1 class="page-header">@yield('title')</h1>
+				<h2 class="page-header">@yield('title') &nbsp;&nbsp; @yield('tombol_tambah') </h2>
 			</div>
 		</div>
 		{{-- batas page header --}}
