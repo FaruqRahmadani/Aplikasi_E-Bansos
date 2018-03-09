@@ -15,7 +15,7 @@
             <div class="col-md-10 col-md-offset-1">
               <form action="/admin/form_page2" method="">
                 <div class="row">
-                  <div class="col-md-4 col-xs-5">
+                  <div class="col-md-12">
                     <div class="form-group">
                       <label for="">Nomor Proposal</label>
                       <input type="text" class="form-control border-input" placeholder="Nomor Proposal" name="nomor" value="">
@@ -23,15 +23,15 @@
                   </div>
                 </div>
                 <div class="row">
-                  <div class="col-md-3 col-xs-4">
+                  <div class="col-md-12">
                     <div class="form-group">
                       <label for="">Tanggal Proposal</label>
-                      <input type="text" class="form-control border-input" name="tanggal" id="tanggal">
+                      <input type="date" class="form-control border-input" name="tanggal">
                     </div>
                   </div>
                 </div>
                 <div class="row">
-                  <div class="col-md-6 col-xs-9">
+                  <div class="col-md-12">
                     <div class="form-group">
                       <label>Perihal</label>
                       <textarea rows="3" class="form-control border-input" placeholder="Perihal terkait proposal" name="perihal" id="perihal"></textarea>
@@ -39,7 +39,7 @@
                   </div>
                 </div>
                 <div class="row">
-                  <div class="col-md-4 col-xs-5">
+                  <div class="col-md-12">
                     <div class="form-group">
                       <label>Kelengkapan Berkas </label>
                       <div class="radio">
@@ -56,15 +56,15 @@
                   </div>
                 </div>
                 <div class="row">
-                  <div class="col-md-3 col-xs-4">
+                  <div class="col-md-12">
                     <div class="form-group">
                       <label for="">Tanggal Masuk</label>
-                      <input type="text" class="form-control border-input" name="tanggal_masuk" id="tanggal_masuk">
+                      <input type="date" class="form-control border-input" name="tanggal_masuk">
                     </div>
                   </div>
                 </div>
                 <div class="row">
-                  <div class="col-md-4 col-xs-5">
+                  <div class="col-md-12">
                     <div class="form-group">
                       <label>Kategori</label>
                       <select class="form-control" name="kategori">
@@ -75,7 +75,7 @@
                 </div>
                 <br>
                 <div class="row">
-                  <div class="col-md-6 col-xs-9">
+                  <div class="col-md-12">
                     <div class="text-center">
                       <div class="pull-right" >
                         <button type="reset" class="btn btn-warning btn-fill" >Ulang</button>
@@ -92,15 +92,4 @@
       </div>
     </div>
   </div>
-  <script type="text/javascript">
-  $(function() {
-    $( "#tanggal_proposal, #tanggal_masuk ").datepicker({
-      dateFormat:'yy-mm-dd',
-      autoclose:true,
-      todayHighlight:true,
-      changeMonth: true,
-      changeYear: true
-    });
-  });
-  </script>
 @endsection
