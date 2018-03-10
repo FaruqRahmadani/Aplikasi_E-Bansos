@@ -11,6 +11,7 @@ require('./mentah/bootstrap-datepicker')
 require('./mentah/jquery.dataTables.min')
 require('./mentah/jquery.dataTables.bootstrap.min')
 require('./mentah/custom')
+require('./mentah/custom-frq')
 
 // window.Vue = require('vue');
 
