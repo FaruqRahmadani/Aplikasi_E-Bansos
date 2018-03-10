@@ -4,7 +4,7 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="csrf-token" content="{{ csrf_token() }}">
-	<title>@yield('title')</title>
+	<title>{{RouteHelper::JudulRoute()}}</title>
 	<link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 <body>
@@ -33,8 +33,11 @@
 				</div>
 				<div class="divider"></div>
 				<ul class="nav menu">
-					<li class=""><a href="/admin"><em class="fa fa-home">&nbsp;</em> Beranda</a></li>
-					<li><a href="/admin/form_page1"><em class="fa fa-pencil-square-o">&nbsp;</em> Input Data</a></li>
+					<li {{RouteHelper::ActiveRoute('Beranda')}}>
+						<a href="{{ Route('Beranda') }}"><em class="fa fa-home">&nbsp;</em> Beranda</a></li>
+					<li>
+						<a href="/admin/form_page1"><em class="fa fa-pencil-square-o">&nbsp;</em> Input Data</a>
+					</li>
 					<li><a href="/admin/daftar_pemohon"><em class="fa fa-list">&nbsp;</em> Daftar Pemohon</a></li>
 					<li><a href="/admin/daftar_instansi"><em class="fa fa-list">&nbsp;</em> Daftar Instansi</a></li>
 					<li><a href="/admin/daftar_proposal"><em class="fa fa-list">&nbsp;</em> Daftar Proposal</a></li>
@@ -59,7 +62,7 @@
 				<br>
 				<br>
 				<div class="divider"></div>
-				<li><a href="/logout"><em class="fa fa-power-off">&nbsp;</em> Logout</a></li>
+				<li><logout></logout></li>
 			</ul>
 		</div>
 		<div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">
@@ -68,12 +71,12 @@
 					<li><a href="/admin">
 						<em class="fa fa-home"></em>
 					</a></li>
-					<li class="active">@yield('title')</li>
+					<li class="active">{{RouteHelper::JudulRoute()}}</li>
 				</ol>
 			</div>
 			<div class="row">
 				<div class="col-lg-12">
-					<h2 class="page-header">@yield('title') &nbsp;&nbsp; @yield('tombol_tambah') </h2>
+					<h2 class="page-header">{{RouteHelper::JudulRoute()}} &nbsp;&nbsp; @yield('tombol_tambah') </h2>
 				</div>
 			</div>
 			@yield('content')

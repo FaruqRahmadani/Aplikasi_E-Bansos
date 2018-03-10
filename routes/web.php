@@ -19,9 +19,9 @@ Route::get('/', function () {
     return view('public.beranda');
 });
 
-Route::get('/admin', function () {
-    return view('admin.beranda');
-});
+
+
+Route::get('/admin', 'AdminController@Beranda')->name('Beranda');
 
 // tabel admin
 Route::get('/admin/daftar_pemohon', function () {
