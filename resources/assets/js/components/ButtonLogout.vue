@@ -1,5 +1,5 @@
 <template>
-  <a href="#"><em class="fa fa-power-off">&nbsp;</em> Logout</a>
+  <a href="#" @click="logout"><em class="fa fa-power-off">&nbsp;</em> Logout</a>
 </template>
 
 <script>

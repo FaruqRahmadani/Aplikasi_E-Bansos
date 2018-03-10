@@ -51240,19 +51240,12 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
+  return _c("a", { attrs: { href: "#" }, on: { click: _vm.logout } }, [
+    _c("em", { staticClass: "fa fa-power-off" }, [_vm._v(" ")]),
+    _vm._v(" Logout")
+  ])
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("a", { attrs: { href: "#" } }, [
-      _c("em", { staticClass: "fa fa-power-off" }, [_vm._v(" ")]),
-      _vm._v(" Logout")
-    ])
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
