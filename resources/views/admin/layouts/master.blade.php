@@ -3,13 +3,9 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="csrf-token" content="{{ csrf_token() }}">
 	<title>@yield('title')</title>
-	<link href="{{ URL::asset('assets/css/bootstrap.min.css')}}" rel="stylesheet">
-	<link href="{{ URL::asset('assets/css/font-awesome.min.css')}}" rel="stylesheet">
-	<link href="{{ URL::asset('assets/css/datepicker3.css')}}" rel="stylesheet">
-	<link href="{{ URL::asset('assets/css/styles.css')}}" rel="stylesheet">
-	<link href="{{ URL::asset('assets/css/monsterat.css')}}" rel="stylesheet">
-	<link href="{{ URL::asset('assets/css/dataTables.bootstrap.min.css')}}" rel="stylesheet">
+	<link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 <body>
 	<nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
@@ -19,14 +15,14 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span></button>
-					<a class="navbar-brand" href="/admin"><span><img src="{{ URL::asset('assets/images/bjb.png')}}" style="width:22px;" alt="logo"></span> &nbsp; E - Bansos </a>
+					<a class="navbar-brand" href="#"><span><img src="{{ asset('assets/images/bjb.png')}}" style="width:22px;" alt="logo"></span> &nbsp; E - Bansos </a>
 				</div>
 			</div>
 		</nav>
 		<div id="sidebar-collapse" class="col-sm-3 col-lg-2 sidebar">
 			<div class="profile-sidebar">
 				<div class="profile-userpic">
-					<img src="{{ URL::asset('assets/images/ava.png')}}" class="img-responsive" alt="">
+					<img src="{{ asset('assets/images/ava.png')}}" class="img-responsive" alt="">
 				</div>
 				<div class="profile-usertitle">
 					<div class="profile-usertitle-name">Admin</div>
@@ -81,11 +77,6 @@
 		</div>
 		@yield('content')
 	</div>
-	<script src="{{ URL::asset('assets/js/jquery-1.11.1.min.js')}}"></script>
-	<script src="{{ URL::asset('assets/js/bootstrap.min.js')}}"></script>
-	<script src="{{ URL::asset('assets/js/bootstrap-datepicker.js')}}"></script>
-	<script src="{{ URL::asset('assets/js/jquery.dataTables.min.js')}}"></script>
-	<script src="{{ URL::asset('assets/js/jquery.dataTables.bootstrap.min.js')}}"></script>
-	<script src="{{ URL::asset('assets/js/custom.js')}}"></script>
+	<script src="{{ asset('js/app.js') }}"></script>
 </body>
 </html>
