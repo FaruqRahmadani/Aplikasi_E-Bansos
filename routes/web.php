@@ -82,3 +82,8 @@ Route::get('/daftar_proposal/detail_proposal', function () {
 Route::get('/kontak', function () {
     return view('public.kontak');
 });
+
+Auth::routes();
+Route::GET('/logout', 'Auth\LoginController@logout')->name('logout');
+
+Route::get('/home', 'HomeController@index')->name('home');
