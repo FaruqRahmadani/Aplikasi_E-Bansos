@@ -14,12 +14,17 @@
 Route::get('/', function () {
     return view('public.beranda');
 });
+Route::get('/loading', function () {
+    return view('admin.loading');
+});
+
 Route::get('/login', function () {
     return view('public.login');
 });
 Route::get('/admin', function () {
     return view('admin.beranda');
 });
+
 
 // tabel admin
 Route::get('/admin/daftar_pemohon', function () {
