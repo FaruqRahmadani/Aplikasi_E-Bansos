@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateKelurahansTable extends Migration
+class AddApiTokenFieldUsers extends Migration
 {
   /**
   * Run the migrations.
@@ -13,11 +13,8 @@ class CreateKelurahansTable extends Migration
   */
   public function up()
   {
-    Schema::create('kelurahans', function (Blueprint $table) {
-      $table->increments('id');
-      $table->string('nama_kelurahan');
-      $table->integer('kecamatan_id');
-      $table->timestamps();
+    Schema::table('users', function (Blueprint $table) {
+      $table->string('api_token')->after('remember_token')->default(bcrypt('apa sih muach muach'));
     });
   }
 
@@ -28,6 +25,8 @@ class CreateKelurahansTable extends Migration
   */
   public function down()
   {
-    Schema::dropIfExists('kelurahans');
+    Schema::table('users', function (Blueprint $table) {
+      $table->dropColumn('api_token');
+    });
   }
 }
