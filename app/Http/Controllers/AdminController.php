@@ -80,4 +80,11 @@ class AdminController extends Controller
 
     return view('admin.PemohonData', ['Pemohon' => $Pemohon]);
   }
+
+  public function DeleteDataPemohon($Id){
+    $Pemohon = Pemohon::findOrFail($Id);
+    $Pemohon->delete();
+
+    return redirect(route('Data-Pemohon'))->with('success', 'Data Berhasil di Hapus');
+  }
 }

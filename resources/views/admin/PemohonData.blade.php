@@ -34,12 +34,10 @@
                       <a href="/admin/daftar_pemohon/detail_pemohon">
                         <button type="button" class="btn btn-sm btn-primary">Info</button>
                       </a>
-                      <a href="#">
-                        <button type="button" class="btn btn-sm btn-warning">Edit</button>
-                      </a>
-                      <a href="#">
-                        <button type="button" class="btn btn-sm btn-danger">Hapus</button>
-                      </a>
+                      <button type="button" class="btn btn-sm btn-warning">Edit</button>
+                      <button-delete
+                        url = {{ route('Delete-Data-Pemohon', ['Id' => $DataPemohon->id]) }}
+                      ></button-delete>
                     </td>
                   </tr>
                 @endforeach
