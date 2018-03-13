@@ -13521,3 +13521,7 @@ div.table-responsive > div.dataTables_wrapper > div.row > div[class^="col-"]:las
   color: #fff !important;
 }
 
+.hidden-template {
+  display: none;
+}
+

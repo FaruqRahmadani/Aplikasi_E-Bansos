@@ -22,6 +22,8 @@ Route::get('/', function () {
 
 
 Route::get('/admin', 'AdminController@Beranda')->name('Beranda');
+Route::get('/input', 'AdminController@InputData')->name('Input-Data');
+Route::POST('/input', 'AdminController@SubmitInputData')->name('Submit-Input-Data');
 
 // tabel admin
 Route::get('/admin/daftar_pemohon', function () {

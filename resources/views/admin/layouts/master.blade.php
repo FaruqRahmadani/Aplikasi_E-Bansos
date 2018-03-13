@@ -35,8 +35,8 @@
 				<ul class="nav menu">
 					<li {{RouteHelper::ActiveRoute('Beranda')}}>
 						<a href="{{ Route('Beranda') }}"><em class="fa fa-home">&nbsp;</em> Beranda</a></li>
-					<li>
-						<a href="/admin/form_page1"><em class="fa fa-pencil-square-o">&nbsp;</em> Input Data</a>
+					<li {{RouteHelper::ActiveRoute('Input-Data')}}>
+						<a href="{{ Route('Input-Data') }}"><em class="fa fa-pencil-square-o">&nbsp;</em> Input Data</a>
 					</li>
 					<li><a href="/admin/daftar_pemohon"><em class="fa fa-list">&nbsp;</em> Daftar Pemohon</a></li>
 					<li><a href="/admin/daftar_instansi"><em class="fa fa-list">&nbsp;</em> Daftar Instansi</a></li>
