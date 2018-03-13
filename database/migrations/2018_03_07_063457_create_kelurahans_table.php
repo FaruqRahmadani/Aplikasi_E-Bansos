@@ -17,8 +17,6 @@ class CreateKelurahansTable extends Migration
       $table->increments('id');
       $table->string('nama_kelurahan');
       $table->integer('kecamatan_id');
-      $table->integer('kota_id');
-      $table->integer('provinsi_id');
       $table->timestamps();
     });
   }

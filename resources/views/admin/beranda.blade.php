@@ -1,7 +1,4 @@
 @extends('admin.layouts.master')
-@section('title')
-  Beranda
-@endsection
 @section('content')
   <div class="panel panel-container">
     <div class="row">

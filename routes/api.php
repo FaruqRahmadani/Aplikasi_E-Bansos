@@ -16,3 +16,11 @@ use Illuminate\Http\Request;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::group(['middleware' => ['auth:api']], function () {
+  Route::GET('/searchnik/{nik}', 'JsonController@SearchNik');
+  Route::GET('/datadaerah', 'JsonController@DataDaerah');
+  Route::GET('/datadaerah-banjarbaru', 'JsonController@DataDaerahBanjarbaru');
+  Route::GET('/datakelurahan/{idkecamatan}', 'JsonController@DataKelurahan');
+  Route::GET('/datainstansi', 'JsonController@DataInstansi');
+});

@@ -1,4 +1,7 @@
-<p align="center"><img src="https://laravel.com/assets/img/components/logo-laravel.svg"></p>
+<p align="center">
+  <img src="https://laravel.com/assets/img/components/logo-laravel.svg">
+  <img src="https://cdn-images-1.medium.com/max/1600/1*-lQFwrWEepbkuaBgOzDqsA.jpeg">
+</p>
 
 ## Nangapa nginih?
 
@@ -27,6 +30,8 @@ Gawi yg disuruh ngini lah :
   - `idk`
 - migrate database
   - `php artisan migrate`
+- seeding database
+  - `php artisan db:seed`
 - install laravel mix
   - `npm install`
  

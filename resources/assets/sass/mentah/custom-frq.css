@@ -1,0 +1,15 @@
+.navbar-custom {
+  border-bottom: 5px solid #30a4ff !important;
+}
+
+.menu-active{
+  background-color: #91cfff;
+  border-right: 5px solid #31a3ff;
+  * {
+    color: #fff !important;
+  }
+}
+
+.hidden-template{
+  display: none;
+}

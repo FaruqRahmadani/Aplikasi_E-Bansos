@@ -17,7 +17,6 @@ class CreateKecamatansTable extends Migration
       $table->increments('id');
       $table->string('nama_kecamatan');
       $table->integer('kota_id');
-      $table->integer('provinsi_id');
       $table->timestamps();
     });
   }

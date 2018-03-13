@@ -5,10 +5,16 @@
  * building robust, powerful web applications using Vue and Laravel.
  */
 
+window.Vue = require('vue');
+
 require('./bootstrap');
 require('./mentah/bootstrap')
+require('./mentah/bootstrap-datepicker')
+require('./mentah/jquery.dataTables.min')
+require('./mentah/jquery.dataTables.bootstrap.min')
+require('./mentah/custom')
+require('./mentah/custom-frq')
 
-// window.Vue = require('vue');
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to

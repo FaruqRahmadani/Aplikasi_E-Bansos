@@ -20,9 +20,9 @@ Route::get('/', function () {
 });
 
 Route::group(['middleware' => ['UserMiddleware']], function () {
-  Route::get('/admin', function () {
-      return view('admin.beranda');
-  });
+  Route::get('/admin', 'AdminController@Beranda')->name('Beranda');
+  Route::get('/input', 'AdminController@InputData')->name('Input-Data');
+  Route::POST('/input', 'AdminController@SubmitInputData')->name('Submit-Input-Data');
 });
 
 Route::get('/loading', function () {

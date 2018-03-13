@@ -15,11 +15,11 @@ class CreateStatusProposalsTable extends Migration
   {
     Schema::create('status_proposals', function (Blueprint $table) {
       $table->increments('id');
-      $table->string('tujuan');
-      $table->string('nomor_surat');
-      $table->string('perihal');
-      $table->string('status');
-      $table->string('keterangan');
+      $table->string('tujuan')->default('-');
+      $table->string('nomor_surat')->default('-');
+      $table->string('perihal')->default('-');
+      $table->integer('status')->default(0);
+      $table->string('keterangan')->default('-');
       $table->integer('proposal_id');
       $table->timestamps();
     });
