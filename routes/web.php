@@ -11,20 +11,23 @@
 |
 */
 
+Route::GET('logout', 'Auth\LoginController@logout')->name('logout');
+Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
+Route::post('login', 'Auth\LoginController@login');
+
 Route::get('/', function () {
     return view('public.beranda');
 });
+
+Route::group(['middleware' => ['UserMiddleware']], function () {
+  Route::get('/admin', function () {
+      return view('admin.beranda');
+  });
+});
+
 Route::get('/loading', function () {
     return view('admin.loading');
 });
-
-Route::get('/login', function () {
-    return view('public.login');
-});
-Route::get('/admin', function () {
-    return view('admin.beranda');
-});
-
 
 // tabel admin
 Route::get('/admin/daftar_pemohon', function () {
@@ -87,3 +90,5 @@ Route::get('/daftar_proposal/detail_proposal', function () {
 Route::get('/kontak', function () {
     return view('public.kontak');
 });
+
+Route::get('/home', 'HomeController@index')->name('home');

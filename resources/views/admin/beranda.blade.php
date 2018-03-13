@@ -1,4 +1,4 @@
-@extends('master_admin.layout')
+@extends('admin.layouts.master')
 @section('title')
   Beranda
 @endsection
