@@ -19,11 +19,15 @@ Route::get('/', function () {
     return view('public.beranda');
 });
 
+Route::group(['middleware' => ['UserMiddleware']], function () {
+  Route::get('/admin', 'AdminController@Beranda')->name('Beranda');
+  Route::get('/input', 'AdminController@InputData')->name('Input-Data');
+  Route::POST('/input', 'AdminController@SubmitInputData')->name('Submit-Input-Data');
+});
 
-
-Route::get('/admin', 'AdminController@Beranda')->name('Beranda');
-Route::get('/input', 'AdminController@InputData')->name('Input-Data');
-Route::POST('/input', 'AdminController@SubmitInputData')->name('Submit-Input-Data');
+Route::get('/loading', function () {
+    return view('admin.loading');
+});
 
 // tabel admin
 Route::get('/admin/daftar_pemohon', function () {
