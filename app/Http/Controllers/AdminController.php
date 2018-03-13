@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Pemohon;
 use App\Instansi;
 use App\Proposal;
+use App\StatusProposal;
 
 class AdminController extends Controller
 {
@@ -63,6 +64,14 @@ class AdminController extends Controller
     $Proposal->pemohon_id = $request->id_pemohon ? $request->id_pemohon : $PemohonId;
     $Proposal->save();
 
+    $ProposalId = Proposal::orderBy('id', 'desc')
+                          ->first()
+                          ->id;
+
+    $StatusProposal = new StatusProposal;
+    $StatusProposal->proposal_id = $ProposalId;
+    $StatusProposal->save();
+    
     return redirect(route('Input-Data'))->with('success', 'Tambah Data Berhasil');
   }
 }
