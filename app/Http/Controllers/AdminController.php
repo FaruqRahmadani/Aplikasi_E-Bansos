@@ -71,7 +71,13 @@ class AdminController extends Controller
     $StatusProposal = new StatusProposal;
     $StatusProposal->proposal_id = $ProposalId;
     $StatusProposal->save();
-    
+
     return redirect(route('Input-Data'))->with('success', 'Tambah Data Berhasil');
+  }
+
+  public function DataPemohon(){
+    $Pemohon = Pemohon::all();
+
+    return view('admin.PemohonData', ['Pemohon' => $Pemohon]);
   }
 }
