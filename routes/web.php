@@ -18,10 +18,12 @@ Route::post('login', 'Auth\LoginController@login');
 Route::get('/', function () {
     return view('public.beranda');
 });
-
-Route::get('/admin', function () {
-    return view('admin.beranda');
+Route::group(['middleware' => ['UserMiddleware']], function () {
+  Route::get('/admin', function () {
+      return view('admin.beranda');
+  });
 });
+
 
 // tabel admin
 Route::get('/admin/daftar_pemohon', function () {
