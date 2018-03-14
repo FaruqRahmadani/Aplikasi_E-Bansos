@@ -7,6 +7,7 @@
           <div class="panel-body">
             <div class="col-md-10 col-md-offset-1">
               <form action="{{ Route('Submit-Edit-Data-Pemohon', ['id' => IDCrypt::Encrypt($Pemohon->id)]) }}" method="POST">
+                {{csrf_field()}}
                 <div class="row">
                   <div class="col-md-12">
                     <div class="form-group">
