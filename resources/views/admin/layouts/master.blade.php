@@ -78,7 +78,7 @@
 			</div>
 			<div class="row">
 				<div class="col-lg-12">
-					<h2 class="page-header">{{RouteHelper::JudulRoute()}} &nbsp;&nbsp; @yield('tombol_tambah') </h2>
+					<h2 class="page-header">{{RouteHelper::JudulRoute()}}</h2>
 				</div>
 			</div>
 			@yield('content')

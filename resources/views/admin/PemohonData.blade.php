@@ -31,9 +31,9 @@
                       {{$DataPemohon->alamat}}
                     </td>
                     <td  class="text-center">
-                      <a href="/admin/daftar_pemohon/detail_pemohon">
-                        <button type="button" class="btn btn-sm btn-primary">Info</button>
-                      </a>
+                      <button-info
+                        url = {{ route('Info-Data-Pemohon', ['Id' => IDCrypt::Encrypt($DataPemohon->id)]) }}
+                      ></button-info>
                       <button-edit
                         url = {{ route('Edit-Data-Pemohon', ['Id' => IDCrypt::Encrypt($DataPemohon->id)]) }}
                       ></button-edit>
@@ -51,5 +51,4 @@
     </div>
   </div>
 </div>
-
 @endsection

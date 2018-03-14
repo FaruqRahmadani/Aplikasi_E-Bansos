@@ -7,6 +7,7 @@ Vue.component('form-proposal', require('./../components/FormProposal.vue'));
 Vue.component('field-daerah', require('./../components/FieldDaerah.vue'));
 Vue.component('button-delete', require('./../components/ButtonDelete.vue'));
 Vue.component('button-edit', require('./../components/ButtonEdit.vue'));
+Vue.component('button-info', require('./../components/ButtonInfo.vue'));
 
 var vm = new Vue({
   el: '#app',

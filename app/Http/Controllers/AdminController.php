@@ -125,4 +125,11 @@ class AdminController extends Controller
 
     return redirect(route('Data-Pemohon'))->with('success', 'Data Berhasil di Edit');
   }
+
+  public function InfoDataPemohon($Id){
+    $Id = IDCrypt::Decrypt($Id);
+    $Pemohon = Pemohon::findOrFail($Id);
+
+    return view('admin.PemohonInfo', ['Pemohon' => $Pemohon]);
+  }
 }
