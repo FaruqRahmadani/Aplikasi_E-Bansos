@@ -209,6 +209,7 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
         'RouteHelper' => App\Helpers\RouteHelper::class,
+        'IDCrypt' => App\Helpers\IDCryptHelper::class,
     ],
 
 ];

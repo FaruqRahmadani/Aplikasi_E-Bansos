@@ -4,9 +4,15 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use IDCrypt;
+
+use App\Kota;
 use App\Pemohon;
 use App\Instansi;
 use App\Proposal;
+use App\Provinsi;
+use App\Kecamatan;
+use App\Kelurahan;
 use App\StatusProposal;
 
 class AdminController extends Controller
@@ -82,9 +88,21 @@ class AdminController extends Controller
   }
 
   public function DeleteDataPemohon($Id){
+    $Id = IDCrypt::Decrypt($Id);
     $Pemohon = Pemohon::findOrFail($Id);
     $Pemohon->delete();
 
     return redirect(route('Data-Pemohon'))->with('success', 'Data Berhasil di Hapus');
+  }
+
+  public function EditDataPemohon($Id){
+    $Id = IDCrypt::Decrypt($Id);
+    $Pemohon = Pemohon::findOrFail($Id);
+    $Provinsi = Provinsi::all();
+    $Kota = Kota::all();
+    $Kecamatan = Kecamatan::all();
+    $Kelurahan = Kelurahan::all();
+
+    return view('admin.PemohonEdit', ['Pemohon' => $Pemohon, 'Provinsi' => $Provinsi, 'Kota' => $Kota, 'Kecamatan' => $Kecamatan, 'Kelurahan' => $Kelurahan]);
   }
 }

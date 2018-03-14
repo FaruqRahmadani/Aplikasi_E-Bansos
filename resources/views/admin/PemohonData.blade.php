@@ -34,9 +34,11 @@
                       <a href="/admin/daftar_pemohon/detail_pemohon">
                         <button type="button" class="btn btn-sm btn-primary">Info</button>
                       </a>
-                      <button type="button" class="btn btn-sm btn-warning">Edit</button>
+                      <button-edit
+                        url = {{ route('Edit-Data-Pemohon', ['Id' => IDCrypt::Encrypt($DataPemohon->id)]) }}
+                      ></button-edit>
                       <button-delete
-                        url = {{ route('Delete-Data-Pemohon', ['Id' => $DataPemohon->id]) }}
+                        url = {{ route('Delete-Data-Pemohon', ['Id' => IDCrypt::Encrypt($DataPemohon->id)]) }}
                       ></button-delete>
                     </td>
                   </tr>

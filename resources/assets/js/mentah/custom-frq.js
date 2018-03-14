@@ -4,7 +4,9 @@ Vue.component('logout', require('./../components/ButtonLogout.vue'));
 Vue.component('form-pemohon', require('./../components/FormPemohon.vue'));
 Vue.component('form-instansi', require('./../components/FormInstansi.vue'));
 Vue.component('form-proposal', require('./../components/FormProposal.vue'));
+Vue.component('field-daerah', require('./../components/FieldDaerah.vue'));
 Vue.component('button-delete', require('./../components/ButtonDelete.vue'));
+Vue.component('button-edit', require('./../components/ButtonEdit.vue'));
 
 var vm = new Vue({
   el: '#app',
