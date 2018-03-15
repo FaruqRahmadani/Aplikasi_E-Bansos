@@ -138,4 +138,12 @@ class AdminController extends Controller
 
     return view('admin.InstansiData', ['Instansi' => $Instansi]);
   }
+
+  public function DeleteDataInstansi($Id){
+    $Id = IDCrypt::Decrypt($Id);
+    $Instansi = Instansi::findOrFail($Id);
+    $Instansi->delete();
+
+    return redirect(route('Data-Instansi'))->with('success', 'Data Berhasil di Delete');
+  }
 }

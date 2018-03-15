@@ -29,7 +29,9 @@
                       <td class="text-center">
                         <button-info></button-info>
                         <button-edit></button-edit>
-                        <button-delete></button-delete>
+                        <button-delete
+                          url = {{ route('Delete-Data-Instansi', ['Id' => IDCrypt::Encrypt($DataInstansi->id)]) }}
+                        ></button-delete>
                       </td>
                     </tr>
                   @endforeach
