@@ -132,4 +132,10 @@ class AdminController extends Controller
 
     return view('admin.PemohonInfo', ['Pemohon' => $Pemohon]);
   }
+
+  public function DataInstansi(){
+    $Instansi = Instansi::all();
+
+    return view('admin.InstansiData', ['Instansi' => $Instansi]);
+  }
 }
