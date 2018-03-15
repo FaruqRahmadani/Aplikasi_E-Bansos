@@ -20,9 +20,14 @@ Route::get('/', function () {
 });
 
 Route::group(['middleware' => ['UserMiddleware']], function () {
-  Route::get('/admin', 'AdminController@Beranda')->name('Beranda');
-  Route::get('/input', 'AdminController@InputData')->name('Input-Data');
-  Route::POST('/input', 'AdminController@SubmitInputData')->name('Submit-Input-Data');
+  Route::GET('/admin', 'AdminController@Beranda')->name('Beranda');
+  Route::GET('/admin/input', 'AdminController@InputData')->name('Input-Data');
+  Route::POST('/admin/input', 'AdminController@SubmitInputData')->name('Submit-Input-Data');
+  Route::GET('/admin/datapemohon', 'AdminController@DataPemohon')->name('Data-Pemohon');
+  Route::GET('/admin/datapemohon/{id}/hapus', 'AdminController@DeleteDataPemohon')->name('Delete-Data-Pemohon');
+  Route::GET('/admin/datapemohon/{id}/edit', 'AdminController@EditDataPemohon')->name('Edit-Data-Pemohon');
+  Route::POST('/admin/datapemohon/{id}/edit', 'AdminController@submitEditDataPemohon')->name('Submit-Edit-Data-Pemohon');
+  Route::GET('/admin/datapemohon/{id}/info', 'AdminController@InfoDataPemohon')->name('Info-Data-Pemohon');
 });
 
 Route::get('/loading', function () {

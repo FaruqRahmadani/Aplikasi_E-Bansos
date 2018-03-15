@@ -4,9 +4,15 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use IDCrypt;
+
+use App\Kota;
 use App\Pemohon;
 use App\Instansi;
 use App\Proposal;
+use App\Provinsi;
+use App\Kecamatan;
+use App\Kelurahan;
 use App\StatusProposal;
 
 class AdminController extends Controller
@@ -71,7 +77,59 @@ class AdminController extends Controller
     $StatusProposal = new StatusProposal;
     $StatusProposal->proposal_id = $ProposalId;
     $StatusProposal->save();
-    
+
     return redirect(route('Input-Data'))->with('success', 'Tambah Data Berhasil');
+  }
+
+  public function DataPemohon(){
+    $Pemohon = Pemohon::all();
+
+    return view('admin.PemohonData', ['Pemohon' => $Pemohon]);
+  }
+
+  public function DeleteDataPemohon($Id){
+    $Id = IDCrypt::Decrypt($Id);
+    $Pemohon = Pemohon::findOrFail($Id);
+    $Pemohon->delete();
+
+    return redirect(route('Data-Pemohon'))->with('success', 'Data Berhasil di Hapus');
+  }
+
+  public function EditDataPemohon($Id){
+    $Id = IDCrypt::Decrypt($Id);
+    $Pemohon = Pemohon::findOrFail($Id);
+    $Provinsi = Provinsi::all();
+    $Kota = Kota::all();
+    $Kecamatan = Kecamatan::all();
+    $Kelurahan = Kelurahan::all();
+
+    return view('admin.PemohonEdit', ['Pemohon' => $Pemohon, 'Provinsi' => $Provinsi, 'Kota' => $Kota, 'Kecamatan' => $Kecamatan, 'Kelurahan' => $Kelurahan]);
+  }
+
+  public function submitEditDataPemohon(Request $request, $Id){
+    $Id = IDCrypt::Decrypt($Id);
+    $Pemohon = Pemohon::findOrFail($Id);
+    $Pemohon->nik = $request->nik;
+    $Pemohon->nama = $request->nama;
+    $Pemohon->tempat_lahir = $request->tempat_lahir;
+    $Pemohon->tanggal_lahir = $request->tanggal_lahir;
+    $Pemohon->pekerjaan = $request->pekerjaan;
+    $Pemohon->alamat = $request->alamat;
+    $Pemohon->rt = $request->rt;
+    $Pemohon->rw = $request->rw;
+    $Pemohon->provinsi_id = $request->provinsi_id;
+    $Pemohon->kota_id = $request->kota_id;
+    $Pemohon->kecamatan_id = $request->kecamatan_id;
+    $Pemohon->kelurahan_id = $request->kelurahan_id;
+    $Pemohon->save();
+
+    return redirect(route('Data-Pemohon'))->with('success', 'Data Berhasil di Edit');
+  }
+
+  public function InfoDataPemohon($Id){
+    $Id = IDCrypt::Decrypt($Id);
+    $Pemohon = Pemohon::findOrFail($Id);
+
+    return view('admin.PemohonInfo', ['Pemohon' => $Pemohon]);
   }
 }

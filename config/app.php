@@ -208,7 +208,9 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
+        'Tanggal' => App\Helpers\TanggalHelper::class,
         'RouteHelper' => App\Helpers\RouteHelper::class,
+        'IDCrypt' => App\Helpers\IDCryptHelper::class,
     ],
 
 ];

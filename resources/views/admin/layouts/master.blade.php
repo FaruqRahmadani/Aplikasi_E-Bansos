@@ -38,7 +38,9 @@
 					<li {{RouteHelper::ActiveRoute('Input-Data')}}>
 						<a href="{{ Route('Input-Data') }}"><em class="fa fa-pencil-square-o">&nbsp;</em> Input Data</a>
 					</li>
-					<li><a href="/admin/daftar_pemohon"><em class="fa fa-list">&nbsp;</em> Daftar Pemohon</a></li>
+					<li {{RouteHelper::ActiveRoute('Data-Pemohon')}}>
+						<a href="{{ Route('Data-Pemohon') }}"><em class="fa fa-list">&nbsp;</em> Daftar Pemohon</a>
+					</li>
 					<li><a href="/admin/daftar_instansi"><em class="fa fa-list">&nbsp;</em> Daftar Instansi</a></li>
 					<li><a href="/admin/daftar_proposal"><em class="fa fa-list">&nbsp;</em> Daftar Proposal</a></li>
 					<li class="parent "><a data-toggle="collapse" href="#sub-item-1">
@@ -76,7 +78,7 @@
 			</div>
 			<div class="row">
 				<div class="col-lg-12">
-					<h2 class="page-header">{{RouteHelper::JudulRoute()}} &nbsp;&nbsp; @yield('tombol_tambah') </h2>
+					<h2 class="page-header">{{RouteHelper::JudulRoute()}}</h2>
 				</div>
 			</div>
 			@yield('content')
