@@ -169,4 +169,11 @@ class AdminController extends Controller
 
     return redirect(route('Data-Instansi'))->with('success', 'Data Berhasil di Edit');
   }
+
+  public function InfoDataInstansi($Id){
+    $Id = IDCrypt::Decrypt($Id);
+    $Instansi = Instansi::findOrFail($Id);
+
+    return view('admin.InstansiInfo', ['Instansi' => $Instansi]);
+  }
 }

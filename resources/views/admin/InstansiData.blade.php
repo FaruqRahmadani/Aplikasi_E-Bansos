@@ -27,7 +27,9 @@
                       <td>{{ $DataInstansi->Kelurahan->nama_kelurahan }}</td>
                       <td>{{ $DataInstansi->Kecamatan->nama_kecamatan }}</td>
                       <td class="text-center">
-                        <button-info></button-info>
+                        <button-info
+                          url= {{ route('Info-Data-Instansi', ['Id' => IDCrypt::Encrypt($DataInstansi->id)]) }}
+                        ></button-info>
                         <button-edit
                           url= {{ route('Edit-Data-Instansi', ['Id' => IDCrypt::Encrypt($DataInstansi->id)]) }}
                         ></button-edit>
