@@ -30,6 +30,8 @@ Route::group(['middleware' => ['UserMiddleware']], function () {
   Route::GET('/admin/datapemohon/{id}/info', 'AdminController@InfoDataPemohon')->name('Info-Data-Pemohon');
   Route::GET('/admin/datainstansi', 'AdminController@DataInstansi')->name('Data-Instansi');
   Route::GET('/admin/datainstansi/{id}/delete', 'AdminController@DeleteDataInstansi')->name('Delete-Data-Instansi');
+  Route::GET('/admin/datainstansi/{id}/edit', 'AdminController@EditDataInstansi')->name('Edit-Data-Instansi');
+  Route::POST('/admin/datainstansi/{id}/edit', 'AdminController@SubmitEditDataInstansi')->name('Submit-Edit-Data-Instansi');
 });
 
 Route::get('/loading', function () {
