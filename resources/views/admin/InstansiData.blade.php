@@ -20,17 +20,19 @@
                   </tr>
                 </thead>
                 <tbody>
-                  <tr>
-                    <td>Universitas ABC</td>
-                    <td>Jl. A. Yani RT 08 RW 08</td>
-                    <td>Mentaos</td>
-                    <td>Banjarbaru Utara</td>
-                    <td class="text-center">
-                      <button-info></button-info>
-                      <button-edit></button-edit>
-                      <button-delete></button-delete>
-                    </td>
-                  </tr>
+                  @foreach ($Instansi as $DataInstansi)
+                    <tr>
+                      <td>{{ $DataInstansi->nama }}</td>
+                      <td>{{ $DataInstansi->alamat }}</td>
+                      <td>{{ $DataInstansi->Kelurahan->nama_kelurahan }}</td>
+                      <td>{{ $DataInstansi->Kecamatan->nama_kecamatan }}</td>
+                      <td class="text-center">
+                        <button-info></button-info>
+                        <button-edit></button-edit>
+                        <button-delete></button-delete>
+                      </td>
+                    </tr>
+                  @endforeach
                 </tbody>
               </table>
             </div>
