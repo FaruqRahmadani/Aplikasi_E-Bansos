@@ -1,7 +1,4 @@
-@extends('master_admin.layout')
-@section('title')
-  Data Provisnsi
-@endsection
+@extends('admin.layouts.master')
 @section('tombol_tambah')
   <button type="button" class="btn btn-sm btn-primary">Tambah</button>
 @endsection
@@ -10,32 +7,32 @@
     <div class="row">
       <div class="col-md-12">
         <div class="panel panel-default">
-          {{-- <div class="panel-heading">
-          Site Traffic Overview
-        </div> --}}
         <div class="panel-body">
-          {{-- isian content --}}
           <div class="col-md-12">
             <table id="table_id" class="table table-striped table-advance table-bordered">
               <thead>
                 <tr>
-                  <th style="text-align:center;"> Provinsi</th>
-                  <th style="text-align:center; width:18%;"> Kab/Kota</th>
-                  <th style="text-align:center; width:18%;"> Kecamatan</th>
-                  <th style="text-align:center; width:18%;"> Kelurahan</th>
-                  <th style="text-align:center; width:16%;"> Action</th>
+                  <th class="text-center"> Provinsi</th>
+                  <th class="text-center"> Kab/Kota</th>
+                  <th class="text-center"> Kecamatan</th>
+                  <th class="text-center"> Kelurahan</th>
+                  <th class="text-center"> Action</th>
                 </tr>
               </thead>
               <tbody>
-                <td> Kalimantan Selatan</td>
-                <td style="text-align:center;">50</td>
-                <td style="text-align:center;">40</td>
-                <td style="text-align:center;">30</td>
-                <td  style="text-align:center;">
-                  <button type="button" class="btn btn-sm btn-primary">Info</button>
-                  <button type="button" class="btn btn-sm btn-warning">Edit</button>
-                  <button type="button" class="btn btn-sm btn-danger">Hapus</button></td>
-                </tr>
+                @foreach ($Provinsi as $DataProvinsi)
+                  <tr>
+                    <td>{{$DataProvinsi->nama_provinsi}}</td>
+                    <td class="text-center">{{Daerah::ProvinsiCountKota($DataProvinsi)}}</td>
+                    <td class="text-center">{{Daerah::ProvinsiCountKecamatan($DataProvinsi)}}</td>
+                    <td class="text-center">{{Daerah::ProvinsiCountKelurahan($DataProvinsi)}}</td>
+                    <td class="text-center">
+                      <button type="button" class="btn btn-sm btn-primary">Info</button>
+                      <button type="button" class="btn btn-sm btn-warning">Edit</button>
+                      <button type="button" class="btn btn-sm btn-danger">Hapus</button>
+                    </td>
+                  </tr>
+                @endforeach
               </tbody>
             </table>
           </div>

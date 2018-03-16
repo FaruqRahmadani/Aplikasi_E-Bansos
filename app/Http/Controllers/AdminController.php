@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use Daerah;
 use IDCrypt;
 
 use App\Kota;
@@ -131,5 +132,11 @@ class AdminController extends Controller
     $Pemohon = Pemohon::findOrFail($Id);
 
     return view('admin.PemohonInfo', ['Pemohon' => $Pemohon]);
+  }
+
+  public function DataProvinsi(){
+    $Provinsi = Provinsi::all();
+
+    return view('admin.ProvinsiData', ['Provinsi' => $Provinsi]);
   }
 }
