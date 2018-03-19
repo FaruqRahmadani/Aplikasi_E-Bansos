@@ -142,7 +142,7 @@ class AdminController extends Controller
 
   public function DeleteDataProvinsi($Id){
     $Id = IDCrypt::Decrypt($Id);
-    $Provinsi = Pemohon::findOrFail($Id);
+    $Provinsi = Provinsi::findOrFail($Id);
     $Provinsi->delete();
 
     return redirect(route('Data-Provinsi'))->with('success', 'Hapus Data Provinsi Berhasil');

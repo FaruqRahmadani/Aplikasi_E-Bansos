@@ -7,7 +7,7 @@ export default {
   props: ['url', 'jumlah'],
   methods: {
     hapus(link,jumlah){
-      if (!jumlah) {
+      if (jumlah == 0) {
         swal({
           title   : "Hapus",
           text    : "Yakin Ingin Hapus Data?",
