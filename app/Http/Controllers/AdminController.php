@@ -139,4 +139,12 @@ class AdminController extends Controller
 
     return view('admin.ProvinsiData', ['Provinsi' => $Provinsi]);
   }
+
+  public function DeleteDataProvinsi($Id){
+    $Id = IDCrypt::Decrypt($Id);
+    $Provinsi = Pemohon::findOrFail($Id);
+    $Provinsi->delete();
+
+    return redirect(route('Data-Provinsi'))->with('success', 'Hapus Data Provinsi Berhasil');
+  }
 }

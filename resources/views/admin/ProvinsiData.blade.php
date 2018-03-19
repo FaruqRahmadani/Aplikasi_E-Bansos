@@ -35,7 +35,10 @@
                     <td class="text-center">
                       <button type="button" class="btn btn-sm btn-primary">Info</button>
                       <button type="button" class="btn btn-sm btn-warning">Edit</button>
-                      <button type="button" class="btn btn-sm btn-danger">Hapus</button>
+                      <button-delete
+                        url = {{route('Delete-Data-Provinsi', ['id' => IDCrypt::Encrypt($DataProvinsi->id)])}}
+                        jumlah = {{Daerah::CountKota($DataProvinsi->id)}}
+                      ></button-delete>
                     </td>
                   </tr>
                 @endforeach
