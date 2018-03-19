@@ -23,9 +23,15 @@
                 @foreach ($Provinsi as $DataProvinsi)
                   <tr>
                     <td>{{$DataProvinsi->nama_provinsi}}</td>
-                    <td class="text-center">{{Daerah::ProvinsiCountKota($DataProvinsi)}}</td>
-                    <td class="text-center">{{Daerah::ProvinsiCountKecamatan($DataProvinsi)}}</td>
-                    <td class="text-center">{{Daerah::ProvinsiCountKelurahan($DataProvinsi)}}</td>
+                    <td class="text-center">
+                      {{Daerah::CountKota($DataProvinsi->id)}}
+                    </td>
+                    <td class="text-center">
+                      {{Daerah::CountKecamatan($DataProvinsi->id)}}
+                    </td>
+                    <td class="text-center">
+                      {{Daerah::CountKelurahan($DataProvinsi->id)}}
+                    </td>
                     <td class="text-center">
                       <button type="button" class="btn btn-sm btn-primary">Info</button>
                       <button type="button" class="btn btn-sm btn-warning">Edit</button>
@@ -42,28 +48,5 @@
     </div>
   </div>
 </div>
-
-<script type="text/javascript">
-$(document).ready(function() {
-  $('#table_id').DataTable();
-});
-//bahasa
-$('#table_id').DataTable({
-  language: {
-    processing: "Sedang memproses...",
-    search: "Cari Data&nbsp&nbsp;:&nbsp",
-    lengthMenu: "Tampilkan _MENU_ data",
-    info: "(&nbsp Menampilkan _START_ sampai _END_, dari _TOTAL_ data &nbsp)",
-    infoEmpty: "Menampilkan 0 sampai 0 dari 0 data",
-    infoFiltered: "(disaring dari _MAX_ data keseluruhan)",
-    infoPostFix: "",
-    zeroRecords: "Tidak ditemukan data yang sesuai",
-    paginate: {
-      previous: "Sebelumnya&nbsp",
-      next: "&nbspSelanjutnya",
-    }
-  }
-});
-</script>
 
 @endsection

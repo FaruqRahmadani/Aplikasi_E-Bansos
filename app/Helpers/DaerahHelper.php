@@ -3,27 +3,34 @@ namespace App\Helpers;
 
 use Request;
 
+use App\Kota;
+use App\Kecamatan;
+use App\Kelurahan;
+
 class DaerahHelper
 {
-  public static function ProvinsiCountKota($Provinsi){
-    return count($Provinsi->Kota);
+  public static function CountKota($ProvinsiId){
+    $Kota = Kota::where('provinsi_id', $ProvinsiId)
+                ->get();
+    return count($Kota);
   }
 
-  public static function ProvinsiCountKecamatan($Provinsi){
-    $Kota = $Provinsi->Kota;
-    $CountKecamatan = 0;
-    foreach ($Kota as $DataKota) {
-      $CountKecamatan+=Count($DataKota->Kecamatan);
-    }
-    return $CountKecamatan;
+  public static function CountKecamatan($ProvinsiId){
+    $Kecamatan = Kecamatan::where('kota_id', 'LIKE', $ProvinsiId.'%')
+                          ->get();
+    return count($Kecamatan);
   }
 
-  public static function ProvinsiCountKelurahan($Provinsi){
+  public static function CountKelurahan($ProvinsiId){
+    $Kelurahan = Kelurahan::where('kecamatan_id', 'LIKE', $ProvinsiId.'%')
+                          ->get();
+    return count($Kelurahan);
     $Kota = $Provinsi->Kota;
     $CountKelurahan = 0;
+    // return 'Error Kam';
     foreach ($Kota as $DataKota) {
       foreach ($DataKota->Kecamatan as $DataKecamatan) {
-        $CountKelurahan = count($DataKecamatan->Kelurahan);
+        return count($DataKecamatan->Kelurahan);
       }
     }
     return $CountKelurahan;
