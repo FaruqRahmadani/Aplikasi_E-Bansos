@@ -167,4 +167,12 @@ class AdminController extends Controller
   public function TambahDataProvinsi(){
     return view('admin.ProvinsiTambah');
   }
+
+  public function SubmitTambahDataProvinsi(Request $request){
+    $Provinsi = new Provinsi;
+    $Provinsi->nama_provinsi = $request->nama_provinsi;
+    $Provinsi->save();
+
+    return redirect(route('Data-Provinsi'))->with('success', 'Tambah Data Provinsi Berhasil');
+  }
 }
