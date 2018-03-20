@@ -12,7 +12,7 @@
                   <div class="col-md-12">
                     <div class="form-group">
                       <label>Nama Provinsi</label>
-                      <input type="text" name="nik" class="form-control border-input" maxlength="16" value="{{$Provinsi->nama_provinsi}}" autofocus required>
+                      <input type="text" name="nama_provinsi" class="form-control border-input" maxlength="16" value="{{$Provinsi->nama_provinsi}}" autofocus required>
                     </div>
                   </div>
                 </div>
