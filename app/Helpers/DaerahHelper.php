@@ -27,7 +27,6 @@ class DaerahHelper
     return count($Kelurahan);
     $Kota = $Provinsi->Kota;
     $CountKelurahan = 0;
-    // return 'Error Kam';
     foreach ($Kota as $DataKota) {
       foreach ($DataKota->Kecamatan as $DataKecamatan) {
         return count($DataKecamatan->Kelurahan);
