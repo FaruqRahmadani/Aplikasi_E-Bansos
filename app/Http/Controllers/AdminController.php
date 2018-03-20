@@ -147,4 +147,11 @@ class AdminController extends Controller
 
     return redirect(route('Data-Provinsi'))->with('success', 'Hapus Data Provinsi Berhasil');
   }
+
+  public function EditDataProvinsi($Id){
+    $Id = IDCrypt::Decrypt($Id);
+    $Provinsi = Provinsi::findOrFail($Id);
+
+    return view('admin.ProvinsiEdit', ['Provinsi' => $Provinsi]);
+  }
 }

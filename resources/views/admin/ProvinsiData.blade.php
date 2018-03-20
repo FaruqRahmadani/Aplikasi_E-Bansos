@@ -34,7 +34,9 @@
                     </td>
                     <td class="text-center">
                       <button type="button" class="btn btn-sm btn-primary">Info</button>
-                      <button type="button" class="btn btn-sm btn-warning">Edit</button>
+                      <button-edit
+                        url = {{ route('Edit-Data-Provinsi', ['Id' => IDCrypt::Encrypt($DataProvinsi->id)]) }}
+                      ></button-edit>
                       <button-delete
                         url = {{route('Delete-Data-Provinsi', ['id' => IDCrypt::Encrypt($DataProvinsi->id)])}}
                         jumlah = {{Daerah::CountKota($DataProvinsi->id)}}
