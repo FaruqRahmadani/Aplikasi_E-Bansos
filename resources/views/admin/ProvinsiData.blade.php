@@ -33,7 +33,6 @@
                       {{Daerah::CountKelurahan($DataProvinsi->id)}}
                     </td>
                     <td class="text-center">
-                      <button type="button" class="btn btn-sm btn-primary">Info</button>
                       <button-edit
                         url = {{ route('Edit-Data-Provinsi', ['Id' => IDCrypt::Encrypt($DataProvinsi->id)]) }}
                       ></button-edit>
