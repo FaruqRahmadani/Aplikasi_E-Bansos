@@ -32,6 +32,8 @@ Route::group(['middleware' => ['UserMiddleware']], function () {
   Route::GET('/admin/dataprovinsi/{id}/hapus', 'AdminController@DeleteDataProvinsi')->name('Delete-Data-Provinsi');
   Route::GET('/admin/dataprovinsi/{id}/edit', 'AdminController@EditDataProvinsi')->name('Edit-Data-Provinsi');
   Route::POST('/admin/dataprovinsi/{id}/edit', 'AdminController@SubmitEditDataProvinsi')->name('Submit-Edit-Data-Provinsi');
+  Route::GET('/admin/dataprovinsi/tambah', 'AdminController@TambahDataProvinsi')->name('Tambah-Data-Provinsi');
+  Route::POST('/admin/dataprovinsi/tambah', 'AdminController@SubmitTambahDataProvinsi')->name('Submit-Tambah-Data-Provinsi');
 });
 
 Route::get('/loading', function () {

@@ -163,4 +163,8 @@ class AdminController extends Controller
 
     return redirect(route('Data-Provinsi'))->with('success', 'Edit Data Provinsi Berhasil');
   }
+
+  public function TambahDataProvinsi(){
+    return view('admin.ProvinsiTambah');
+  }
 }
