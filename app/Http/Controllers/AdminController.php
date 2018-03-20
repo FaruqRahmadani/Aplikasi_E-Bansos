@@ -154,4 +154,13 @@ class AdminController extends Controller
 
     return view('admin.ProvinsiEdit', ['Provinsi' => $Provinsi]);
   }
+
+  public function SubmitEditDataProvinsi(Request $request, $Id){
+    $Id = IDCrypt::Decrypt($Id);
+    $Provinsi = Provinsi::findOrFail($Id);
+    $Provinsi->nama_provinsi = $request->nama_provinsi;
+    $Provinsi->save();
+
+    return redirect(route('Data-Provinsi'))->with('success', 'Edit Data Provinsi Berhasil');
+  }
 }
