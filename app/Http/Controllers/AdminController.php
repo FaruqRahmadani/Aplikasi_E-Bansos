@@ -175,4 +175,9 @@ class AdminController extends Controller
 
     return redirect(route('Data-Provinsi'))->with('success', 'Tambah Data Provinsi Berhasil');
   }
+
+  public function DataKota(){
+    $Kota = Kota::all();
+    return view('admin.KotaData', ['Kota' => $Kota]);
+  }
 }

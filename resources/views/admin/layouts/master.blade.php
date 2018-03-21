@@ -52,9 +52,11 @@
 								<span class="fa fa-arrow-right">&nbsp;</span> Data Provinsi
 							</a>
 						</li>
-						<li><a class="" href="/admin/daftar_kota">
-							<span class="fa fa-arrow-right">&nbsp;</span> Data Kab/Kota
-						</a></li>
+						<li {{RouteHelper::ActiveRoute('Data-Kota')}}>
+							<a class="" href="{{ Route('Data-Kota') }}">
+								<span class="fa fa-arrow-right">&nbsp;</span> Data Kab/Kota
+							</a>
+						</li>
 						<li><a class="" href="/admin/daftar_kecamatan">
 							<span class="fa fa-arrow-right">&nbsp;</span> Data Kecamatan
 						</a></li>
