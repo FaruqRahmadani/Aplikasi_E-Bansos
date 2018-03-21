@@ -9,20 +9,20 @@ use App\Kelurahan;
 
 class DaerahHelper
 {
-  public static function CountKota($ProvinsiId){
-    $Kota = Kota::where('provinsi_id', $ProvinsiId)
+  public static function CountKota($Id){
+    $Kota = Kota::where('provinsi_id', $Id)
                 ->get();
     return count($Kota);
   }
 
-  public static function CountKecamatan($ProvinsiId){
-    $Kecamatan = Kecamatan::where('kota_id', 'LIKE', $ProvinsiId.'%')
+  public static function CountKecamatan($Id){
+    $Kecamatan = Kecamatan::where('kota_id', 'LIKE', $Id.'%')
                           ->get();
     return count($Kecamatan);
   }
 
-  public static function CountKelurahan($ProvinsiId){
-    $Kelurahan = Kelurahan::where('kecamatan_id', 'LIKE', $ProvinsiId.'%')
+  public static function CountKelurahan($Id){
+    $Kelurahan = Kelurahan::where('kecamatan_id', 'LIKE', $Id.'%')
                           ->get();
     return count($Kelurahan);
     $Kota = $Provinsi->Kota;
