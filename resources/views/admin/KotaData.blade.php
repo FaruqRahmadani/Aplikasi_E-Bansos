@@ -11,8 +11,6 @@
                 <tr>
                   <th class="text-center"> Kab/Kota</th>
                   <th class="text-center"> Provinsi</th>
-                  <th class="text-center"> Kecamatan</th>
-                  <th class="text-center"> Kelurahan</th>
                   <th class="text-center"> Action</th>
                 </tr>
               </thead>
@@ -21,12 +19,13 @@
                   <tr>
                     <td> {{$DataKota->nama_kota}}</td>
                     <td> {{$DataKota->Provinsi->nama_provinsi}}</td>
-                    <td class="text-center">{{Daerah::CountKecamatan($DataKota->id)}}</td>
-                    <td class="text-center">{{Daerah::CountKelurahan($DataKota->id)}}</td>
                     <td class="text-center">
                       <button type="button" class="btn btn-sm btn-primary">Info</button>
                       <button type="button" class="btn btn-sm btn-warning">Edit</button>
-                      <button type="button" class="btn btn-sm btn-danger">Hapus</button>
+                      <button-delete
+                        url = {{route('Delete-Data-Kota', ['id' => IDCrypt::Encrypt($DataKota->id)])}}
+                        jumlah = {{Daerah::CountKecamatan($DataKota->id)}}
+                      ></button-delete>
                     </td>
                   </tr>
                 @endforeach
