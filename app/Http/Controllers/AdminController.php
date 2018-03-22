@@ -188,4 +188,12 @@ class AdminController extends Controller
 
     return redirect(route('Data-Kota'))->with('success', 'Hapus Data Kota Berhasil');
   }
+
+  public function EditDataKota($Id){
+    $Id = IDCrypt::Decrypt($Id);
+    $Kota = Kota::findOrFail($Id);
+    $Provinsi = Provinsi::all();
+
+    return view('admin.KotaEdit', ['Kota' => $Kota, 'Provinsi' => $Provinsi]);
+  }
 }
