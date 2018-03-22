@@ -206,4 +206,19 @@ class AdminController extends Controller
 
     return redirect(route('Data-Kota'))->with('success', 'Edit Data Kota Berhasil');
   }
+
+  public function TambahDataKota(){
+    $Provinsi = Provinsi::all();
+
+    return view('admin.KotaTambah', ['Provinsi' => $Provinsi]);
+  }
+
+  public function submitTambahDataKota(Request $request){
+    $Kota = new Kota;
+    $Kota->nama_kota = $request->nama_kota;
+    $Kota->provinsi_id = $request->provinsi_id;
+    $Kota->save();
+
+    return redirect(route('Data-Kota'))->with('success', 'Tambah Data Kota Berhasil');
+  }
 }

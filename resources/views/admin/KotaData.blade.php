@@ -6,8 +6,8 @@
         <div class="panel panel-default">
           <div class="panel-heading no-padding-top">
             <button-header
-            judul='Tambah Data Provinsi'
-            url={{route('Tambah-Data-Provinsi')}}
+            judul='Tambah Data Kota'
+            url={{route('Tambah-Data-Kota')}}
             ></button-header>
           </div>
           <div class="panel-body">
