@@ -14,7 +14,7 @@
                       <label>Provinsi</label>
                       <select class="form-control border-input" name="provinsi_id" required>
                         @foreach ($Provinsi as $DataProvinsi)
-                          <option value="{{$DataProvinsi->id}}" {{$DataProvinsi->id == $Kota->provinsi_id ? 'selected' : ''}}>{{$DataProvinsi->nama_provinsi}}</option>
+                          <option value="{{$DataProvinsi->id}}" {{$DataProvinsi->id == $Kota->provinsi_id ? 'selected' : 'v'}}>{{$DataProvinsi->nama_provinsi}}</option>
                         @endforeach
                       </select>
                     </div>
