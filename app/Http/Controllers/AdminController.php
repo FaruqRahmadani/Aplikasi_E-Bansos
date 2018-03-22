@@ -180,4 +180,12 @@ class AdminController extends Controller
     $Kota = Kota::all();
     return view('admin.KotaData', ['Kota' => $Kota]);
   }
+
+  public function DeleteDataKota($Id){
+    $Id = IDCrypt::Decrypt($Id);
+    $Kota = Kota::findOrFail($Id);
+    $Kota->delete();
+
+    return redirect(route('Data-Kota'))->with('success', 'Hapus Data Kota Berhasil');
+  }
 }
