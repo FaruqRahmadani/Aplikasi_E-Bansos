@@ -57,9 +57,11 @@
 								<span class="fa fa-arrow-right">&nbsp;</span> Data Kab/Kota
 							</a>
 						</li>
-						<li><a class="" href="/admin/daftar_kecamatan">
-							<span class="fa fa-arrow-right">&nbsp;</span> Data Kecamatan
-						</a></li>
+						<li {{RouteHelper::ActiveRoute('Data-Kecamatan')}}>
+							<a class="" href="{{ Route('Data-Kecamatan') }}">
+								<span class="fa fa-arrow-right">&nbsp;</span> Data Kecamatan
+							</a>
+						</li>
 						<li><a class="" href="/admin/daftar_kelurahan">
 							<span class="fa fa-arrow-right">&nbsp;</span> Data Kelurahan
 						</a></li>

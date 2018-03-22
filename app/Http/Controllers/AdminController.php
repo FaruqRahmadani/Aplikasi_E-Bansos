@@ -221,4 +221,10 @@ class AdminController extends Controller
 
     return redirect(route('Data-Kota'))->with('success', 'Tambah Data Kota Berhasil');
   }
+
+  public function DataKecamatan(){
+    $Kecamatan = Kecamatan::all();
+
+    return view('admin.KecamatanData', ['Kecamatan' => $Kecamatan]);
+  }
 }

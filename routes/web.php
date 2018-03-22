@@ -40,6 +40,7 @@ Route::group(['middleware' => ['UserMiddleware']], function () {
   Route::POST('/admin/datakota/{id}/edit', 'AdminController@submitEditDataKota')->name('Submit-Edit-Data-Kota');
   Route::GET('/admin/datakota/tambah', 'AdminController@TambahDataKota')->name('Tambah-Data-Kota');
   Route::POST('/admin/datakota/tambah', 'AdminController@submitTambahDataKota')->name('Submit-Tambah-Data-Kota');
+  Route::GET('/admin/datakecamatan', 'AdminController@DataKecamatan')->name('Data-Kecamatan');
 });
 
 Route::get('/loading', function () {
