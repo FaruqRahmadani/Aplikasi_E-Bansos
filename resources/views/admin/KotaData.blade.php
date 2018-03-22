@@ -20,7 +20,6 @@
                     <td> {{$DataKota->nama_kota}}</td>
                     <td> {{$DataKota->Provinsi->nama_provinsi}}</td>
                     <td class="text-center">
-                      <button type="button" class="btn btn-sm btn-primary">Info</button>
                       <button type="button" class="btn btn-sm btn-warning">Edit</button>
                       <button-delete
                         url = {{route('Delete-Data-Kota', ['id' => IDCrypt::Encrypt($DataKota->id)])}}
