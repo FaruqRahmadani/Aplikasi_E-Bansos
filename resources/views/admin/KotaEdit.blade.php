@@ -6,7 +6,7 @@
         <div class="panel panel-default">
           <div class="panel-body">
             <div class="col-md-10 col-md-offset-1">
-              <form action="{{ Route('Submit-Edit-Data-Provinsi', ['id' => IDCrypt::Encrypt($Kota->id)]) }}" method="POST">
+              <form action="{{ Route('Submit-Edit-Data-Kota', ['id' => IDCrypt::Encrypt($Kota->id)]) }}" method="POST">
                 {{csrf_field()}}
                 <div class="row">
                   <div class="col-md-12">
@@ -24,7 +24,7 @@
                   <div class="col-md-12">
                     <div class="form-group">
                       <label>Nama Kota</label>
-                      <input type="text" name="nama_kota" class="form-control border-input" maxlength="16" value="{{$Kota->nama_kota}}" autofocus required>
+                      <input type="text" name="nama_kota" class="form-control border-input" value="{{$Kota->nama_kota}}" autofocus required>
                     </div>
                   </div>
                 </div>

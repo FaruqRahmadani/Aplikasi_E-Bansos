@@ -196,4 +196,14 @@ class AdminController extends Controller
 
     return view('admin.KotaEdit', ['Kota' => $Kota, 'Provinsi' => $Provinsi]);
   }
+
+  public function submitEditDataKota(Request $request, $Id){
+    $Id = IDCrypt::Decrypt($Id);
+    $Kota = Kota::findOrFail($Id);
+    $Kota->nama_kota = $request->nama_kota;
+    $Kota->provinsi_id = $request->provinsi_id;
+    $Kota->save();
+
+    return redirect(route('Data-Kota'))->with('success', 'Edit Data Kota Berhasil');
+  }
 }

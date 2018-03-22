@@ -37,6 +37,7 @@ Route::group(['middleware' => ['UserMiddleware']], function () {
   Route::GET('/admin/datakota', 'AdminController@DataKota')->name('Data-Kota');
   Route::GET('/admin/datakota/{id}/delete', 'AdminController@DeleteDataKota')->name('Delete-Data-Kota');
   Route::GET('/admin/datakota/{id}/edit', 'AdminController@EditDataKota')->name('Edit-Data-Kota');
+  Route::POST('/admin/datakota/{id}/edit', 'AdminController@submitEditDataKota')->name('Submit-Edit-Data-Kota');
 });
 
 Route::get('/loading', function () {
