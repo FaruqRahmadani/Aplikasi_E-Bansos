@@ -3,9 +3,12 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Proposal extends Model
 {
+  use SoftDeletes;
+  
   public function Instansi(){
     return $this->belongsTo('App\Instansi');
   }

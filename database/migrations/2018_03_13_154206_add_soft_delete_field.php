@@ -16,6 +16,9 @@ class AddSoftDeleteField extends Migration
     Schema::table('pemohons', function ($table) {
       $table->softDeletes();
     });
+    Schema::table('proposals', function ($table) {
+      $table->softDeletes();
+    });
   }
 
   /**
@@ -25,6 +28,11 @@ class AddSoftDeleteField extends Migration
   */
   public function down()
   {
-    //
+    Schema::table('proposals', function (Blueprint $table) {
+      $table->dropSoftDeletes();
+    });
+    Schema::table('pemohons', function (Blueprint $table) {
+      $table->dropSoftDeletes();
+    });
   }
 }
