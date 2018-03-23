@@ -157,4 +157,18 @@ class AdminController extends Controller
   public function UpdateDataProposal($Id){
     return view('admin.ProposalUpdate', ['Id' => $Id]);
   }
+
+  public function submitUpdateDataProposal(Request $request, $Id){
+    $Id = IDCrypt::Decrypt($Id);
+    $StatusProposal = new StatusProposal;
+    $StatusProposal->tujuan = $request->tujuan;
+    $StatusProposal->nomor_surat = $request->nomor_surat;
+    $StatusProposal->perihal = $request->perihal;
+    $StatusProposal->status = $request->status;
+    $StatusProposal->keterangan = $request->keterangan;
+    $StatusProposal->proposal_id = $Id;
+    $StatusProposal->save();
+
+    return redirect(route('Data-Proposal'))->with('success', 'Data Status Proposal Berhasil di Update');
+  }
 }
