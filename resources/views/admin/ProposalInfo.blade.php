@@ -111,9 +111,10 @@
               <a href="/admin/form_update">
                 <button type="button" class="btn btn-success btn-fill">Update</button>
               </a>
-              <a onclick="" href="">
-                <button type="button" class="btn btn-danger btn-fill">Hapus</button>
-              </a>
+              <button-delete
+                url = {{ route('Delete-Data-Proposal', ['Id' => IDCrypt::Encrypt($Proposal->id)]) }}
+                jumlah = 0
+              ></button-delete>
               <a href="">
                 <button type="button" class="btn btn-info btn-fill">Edit</button>
               </a>
