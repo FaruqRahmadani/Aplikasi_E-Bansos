@@ -41,6 +41,9 @@ Route::group(['middleware' => ['UserMiddleware']], function () {
   Route::GET('/admin/datakota/tambah', 'AdminController@TambahDataKota')->name('Tambah-Data-Kota');
   Route::POST('/admin/datakota/tambah', 'AdminController@submitTambahDataKota')->name('Submit-Tambah-Data-Kota');
   Route::GET('/admin/datakecamatan', 'AdminController@DataKecamatan')->name('Data-Kecamatan');
+  Route::GET('/admin/datakecamatan/{id}/hapus', 'AdminController@DeleteDataKecamatan')->name('Delete-Data-Kecamatan');
+  Route::GET('/admin/datakecamatan/{id}/edit', 'AdminController@EditDataKecamatan')->name('Edit-Data-Kecamatan');
+  Route::POST('/admin/datakecamatan/{id}/edit', 'AdminController@submitEditDataKecamatan')->name('Submit-Edit-Data-Kecamatan');
 });
 
 Route::get('/loading', function () {

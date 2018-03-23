@@ -227,4 +227,25 @@ class AdminController extends Controller
 
     return view('admin.KecamatanData', ['Kecamatan' => $Kecamatan]);
   }
+
+  public function DeleteDataKecamatan(){
+    dd('Maaf something wrong, bingung logikanya kyp ni');
+  }
+
+  public function EditDataKecamatan($Id){
+    $Id = IDCrypt::Decrypt($Id);
+    $Kecamatan = Kecamatan::findOrFail($Id);
+
+    return view('admin.KecamatanEdit', ['Kecamatan' => $Kecamatan]);
+  }
+
+  public function submitEditDataKecamatan(Request $request, $Id){
+    $Id = IDCrypt::Decrypt($Id);
+    $Kecamatan = Kecamatan::findOrFail($Id);
+    $Kecamatan->nama_kecamatan = $request->nama_kecamatan;
+    $Kecamatan->kota_id = $request->kota_id;
+    $Kecamatan->save();
+
+    return redirect(route('Data-Kecamatan'))->with('success', 'Edit Data Kecamatan Berhasil');
+  }
 }

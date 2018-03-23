@@ -10,8 +10,6 @@
                 <thead>
                   <tr>
                     <th class="text-center"> Kecamatan</th>
-                    <th class="text-center"> Kab/Kota</th>
-                    <th class="text-center"> Provinsi</th>
                     <th class="text-center"> Action</th>
                   </tr>
                 </thead>
@@ -19,11 +17,15 @@
                   @foreach ($Kecamatan as $DataKecamatan)
                     <tr>
                       <td> {{$DataKecamatan->nama_kecamatan}}</td>
-                      <td> {{$DataKecamatan->Kota->nama_kota}}</td>
-                      <td> {{$DataKecamatan->Kota->Provinsi->nama_provinsi}}</td>
                       <td  class="text-center">
-                        <button type="button" class="btn btn-sm btn-warning">Edit</button>
-                        <button type="button" class="btn btn-sm btn-danger">Hapus</button></td>
+                        <button-edit
+                          url = {{ route('Edit-Data-Kecamatan', ['Id' => IDCrypt::Encrypt($DataKecamatan->id)]) }}
+                        ></button-edit>
+                        <button-delete
+                          url = {{route('Delete-Data-Kecamatan', ['id' => IDCrypt::Encrypt($DataKecamatan->id)])}}
+                          {{-- jumlah = {{$DataKecamatan->Kelurahan->count()}} --}}
+                        ></button-delete>
+                      </td>
                       </tr>
                   @endforeach
                   </tbody>
