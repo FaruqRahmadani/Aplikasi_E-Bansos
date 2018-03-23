@@ -23,7 +23,7 @@
                         ></button-edit>
                         <button-delete
                           url = {{route('Delete-Data-Kecamatan', ['id' => IDCrypt::Encrypt($DataKecamatan->id)])}}
-                          {{-- jumlah = {{$DataKecamatan->Kelurahan->count()}} --}}
+                          jumlah = 0
                         ></button-delete>
                       </td>
                       </tr>
