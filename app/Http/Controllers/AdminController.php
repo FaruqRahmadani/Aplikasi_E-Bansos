@@ -132,4 +132,10 @@ class AdminController extends Controller
 
     return view('admin.PemohonInfo', ['Pemohon' => $Pemohon]);
   }
+
+  public function DataProposal(){
+    $Proposal = Proposal::all();
+    
+    return view('admin.ProposalData', ['Proposal' => $Proposal]);
+  }
 }
