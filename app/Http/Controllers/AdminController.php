@@ -135,7 +135,15 @@ class AdminController extends Controller
 
   public function DataProposal(){
     $Proposal = Proposal::all();
-    
+
     return view('admin.ProposalData', ['Proposal' => $Proposal]);
+  }
+
+  public function DeleteDataProposal($Id){
+    $Id = IDCrypt::Decrypt($Id);
+    $Proposal = Proposal::findOrFail($Id);
+    $Proposal->delete();
+
+    return redirect(route('Data-Proposal'))->with('success', 'Data Berhasil di Hapus');
   }
 }

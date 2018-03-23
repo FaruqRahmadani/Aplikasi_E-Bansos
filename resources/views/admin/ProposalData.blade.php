@@ -43,7 +43,8 @@
                           <button type="button" class="btn btn-sm btn-warning">Edit</button>
                         </a>
                         <button-delete
-                          url =
+                          url = {{ route('Delete-Data-Proposal', ['Id' => IDCrypt::Encrypt($DataProposal->id)]) }}
+                          jumlah = 0
                         ></button-delete>
                       </td>
                     </tr>
