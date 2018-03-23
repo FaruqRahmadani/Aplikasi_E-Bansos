@@ -18,7 +18,9 @@ use App\StatusProposal;
 class AdminController extends Controller
 {
   public function Beranda(){
-    return view('admin.Beranda');
+    $Proposal = Proposal::all();
+
+    return view('admin.Beranda', ['Proposal' => $Proposal]);
   }
 
   public function InputData(){
