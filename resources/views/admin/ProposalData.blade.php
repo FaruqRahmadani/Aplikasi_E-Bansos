@@ -33,12 +33,12 @@
                         {{$DataProposal->kategori}}
                       </td>
                       <td>
-                        {!!Proposal::Status($DataProposal)!!}
+                        {!!Proposal::LastStatus($DataProposal)!!}
                       </td>
                       <td  class="text-center">
-                        <a href="/admin/daftar_proposal/detail_proposal">
-                          <button type="button" class="btn btn-sm btn-primary">Info</button>
-                        </a>
+                        <button-info
+                          url = {{ route('Info-Data-Proposal', ['Id' => IDCrypt::Encrypt($DataProposal->id)]) }}
+                        ></button-info>
                         <a href="#">
                           <button type="button" class="btn btn-sm btn-warning">Edit</button>
                         </a>

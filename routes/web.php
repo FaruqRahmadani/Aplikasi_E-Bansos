@@ -30,6 +30,7 @@ Route::group(['middleware' => ['UserMiddleware']], function () {
   Route::GET('/admin/datapemohon/{id}/info', 'AdminController@InfoDataPemohon')->name('Info-Data-Pemohon');
   Route::GET('/admin/dataproposal', 'AdminController@DataProposal')->name('Data-Proposal');
   Route::GET('/admin/dataproposal/{id}/hapus', 'AdminController@DeleteDataProposal')->name('Delete-Data-Proposal');
+  Route::GET('/admin/dataproposal/{id}', 'AdminController@InfoDataProposal')->name('Info-Data-Proposal');
 });
 
 Route::get('/loading', function () {

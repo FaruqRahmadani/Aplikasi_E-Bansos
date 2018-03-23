@@ -146,4 +146,11 @@ class AdminController extends Controller
 
     return redirect(route('Data-Proposal'))->with('success', 'Data Berhasil di Hapus');
   }
+
+  public function InfoDataProposal($Id){
+    $Id = IDCrypt::Decrypt($Id);
+    $Proposal = Proposal::findOrFail($Id);
+
+    return view('admin.ProposalInfo', ['Proposal' => $Proposal]);
+  }
 }
