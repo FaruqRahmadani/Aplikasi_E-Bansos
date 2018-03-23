@@ -108,9 +108,9 @@
               </tbody>
             </table>
             <div class="pull-right">
-              <a href="/admin/form_update">
-                <button type="button" class="btn btn-success btn-fill">Update</button>
-              </a>
+              <button-updateproposal
+                url = {{ route('Update-Data-Proposal', ['Id' => IDCrypt::Encrypt($Proposal->id)]) }}
+              ></button-updateproposal>
               <button-delete
                 url = {{ route('Delete-Data-Proposal', ['Id' => IDCrypt::Encrypt($Proposal->id)]) }}
                 jumlah = 0

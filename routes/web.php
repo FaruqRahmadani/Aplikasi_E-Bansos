@@ -31,6 +31,8 @@ Route::group(['middleware' => ['UserMiddleware']], function () {
   Route::GET('/admin/dataproposal', 'AdminController@DataProposal')->name('Data-Proposal');
   Route::GET('/admin/dataproposal/{id}/hapus', 'AdminController@DeleteDataProposal')->name('Delete-Data-Proposal');
   Route::GET('/admin/dataproposal/{id}', 'AdminController@InfoDataProposal')->name('Info-Data-Proposal');
+  Route::GET('/admin/dataproposal/{id}/update', 'AdminController@UpdateDataProposal')->name('Update-Data-Proposal');
+  Route::POST('/admin/dataproposal/{id}/update', 'AdminController@submitUpdateDataProposal')->name('Submit-Update-Data-Proposal');
 });
 
 Route::get('/loading', function () {

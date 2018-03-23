@@ -1,4 +1,4 @@
-@extends('master_admin.layout')
+@extends('admin.layouts.master')
 @section('title')
   Data
 @endsection
@@ -11,17 +11,8 @@
             Update Proposal
           </div>
           <div class="panel-body">
-            {{-- isian content --}}
             <div class="col-md-10 col-md-offset-1">
-              <form action="/admin/form_page2" method="">
-                <div class="row">
-                  <div class="col-md-12">
-                    <div class="form-group">
-                      <label for="">Tanggal</label>
-                      <input type="date" class="form-control border-input" name="tanggal">
-                    </div>
-                  </div>
-                </div>
+              <form action="{{ route('Submit-Update-Data-Proposal', ['id' => $Id]) }}" method="">
                 <div class="row">
                   <div class="col-md-12">
                     <div class="form-group">

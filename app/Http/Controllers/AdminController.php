@@ -153,4 +153,8 @@ class AdminController extends Controller
 
     return view('admin.ProposalInfo', ['Proposal' => $Proposal]);
   }
+
+  public function UpdateDataProposal($Id){
+    return view('admin.ProposalUpdate', ['Id' => $Id]);
+  }
 }
