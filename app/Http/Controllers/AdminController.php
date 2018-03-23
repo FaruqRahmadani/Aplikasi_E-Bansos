@@ -248,4 +248,17 @@ class AdminController extends Controller
 
     return redirect(route('Data-Kecamatan'))->with('success', 'Edit Data Kecamatan Berhasil');
   }
+
+  public function TambahDataKecamatan(){
+    return view('admin.KecamatanTambah');
+  }
+
+  public function submitTambahDataKecamatan(Request $request){
+    $Kecamatan = new Kecamatan;
+    $Kecamatan->nama_kecamatan = $request->nama_kecamatan;
+    $Kecamatan->kota_id = $request->kota_id;
+    $Kecamatan->save();
+
+    return redirect(route('Data-Kecamatan'))->with('success', 'Tambah Data Kecamatan Berhasil');
+  }
 }
