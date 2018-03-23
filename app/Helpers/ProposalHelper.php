@@ -5,21 +5,35 @@ use Request;
 
 class ProposalHelper
 {
-  public static function Status($Proposal){
+  public static function Status($Data){
+    if ($Data->status == '0') {
+      $return = '<span class="indicator label-info"></span>Sedang Diproses';
+    }
+    if ($Data->status == '1') {
+      $return = '<span class="indicator label-success"></span>Diterima';
+    }
+    if ($Data->status == '2') {
+      $return = '<span class="indicator label-primary"></span>Ditolak';
+    }
+
+    return $return;
+  }
+
+  public static function LastStatus($Proposal){
     if ($Proposal->kelengkapan != 'Lengkap') {
-      $return = '<div class="btn-sm bg-warning text-center">Berkas Belum Lengkap</div>';
+      $return = '<span class="indicator label-warning"></span>Berkas Belum Lengkap';
     }else {
       $LastStatus = $Proposal->StatusProposal
                              ->last()
                              ->status;
       if ($LastStatus == '0') {
-        $return = '<div class="btn-sm bg-info" align="center">Sedang Diproses</div>';
+        $return = '<span class="indicator label-info"></span>Sedang Diproses';
       }
       if ($LastStatus == '1') {
-        $return = '<div class="btn-sm bg-success" align="center">Diterima</div>';
+        $return = '<span class="indicator label-success"></span>Diterima';
       }
       if ($LastStatus == '2') {
-        $return = '<div class="btn-sm bg-primary" align="center">Ditolak</div>';
+        $return = '<span class="indicator label-primary"></span>Ditolak';
       }
     }
     return $return;
