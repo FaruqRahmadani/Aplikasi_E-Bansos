@@ -21,7 +21,7 @@ class TanggalHelper
       12 => 'Desember'
     ];
 
-    $Tanggal = Carbon::parse($Date)->format('d');
+    $Tanggal = Carbon::parse($Date)->format('j');
     $Bulan = $Bulan[Carbon::parse($Date)->format('n')];
     $Tahun = Carbon::parse($Date)->format('Y');
 
