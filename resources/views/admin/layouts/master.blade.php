@@ -62,9 +62,11 @@
 								<span class="fa fa-arrow-right">&nbsp;</span> Data Kecamatan
 							</a>
 						</li>
-						<li><a class="" href="/admin/daftar_kelurahan">
-							<span class="fa fa-arrow-right">&nbsp;</span> Data Kelurahan
-						</a></li>
+						<li {{RouteHelper::ActiveRoute('Data-Kelurahan')}}>
+							<a class="" href="{{ Route('Data-Kelurahan') }}">
+								<span class="fa fa-arrow-right">&nbsp;</span> Data Kelurahan
+							</a>
+						</li>
 					</ul>
 				</li>
 				<br>
