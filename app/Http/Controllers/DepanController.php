@@ -23,6 +23,8 @@ class DepanController extends Controller
   }
 
   public function DaftarProposal(){
-    return view('depan.ProposalDaftar');
+    $Proposal = Proposal::all();
+
+    return view('depan.ProposalDaftar', ['Proposal' => $Proposal]);
   }
 }
