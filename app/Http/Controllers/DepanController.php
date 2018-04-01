@@ -17,4 +17,8 @@ class DepanController extends Controller
   public function DaftarPersyaratan(){
     return view('depan.DaftarPersyaratan');
   }
+
+  public function Kontak(){
+    return view('depan.Kontak');
+  }
 }

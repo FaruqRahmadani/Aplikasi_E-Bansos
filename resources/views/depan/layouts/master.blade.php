@@ -32,7 +32,7 @@
 				<a href="/daftar_proposal"><em class="fa fa-list">&nbsp;</em> Daftar Proposal</a>
 			</li>
 			<li>
-				<a href="/kontak"><em class="fa fa-paper-plane">&nbsp;</em> Kontak</a>
+				<a href="{{ Route('Kontak') }}"><em class="fa fa-paper-plane">&nbsp;</em> Kontak</a>
 			</li>
 		</ul>
 	</div>
