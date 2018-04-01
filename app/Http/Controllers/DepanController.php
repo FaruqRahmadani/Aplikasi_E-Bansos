@@ -13,4 +13,8 @@ class DepanController extends Controller
 
     return view('depan.Beranda', ['Proposal' => $Proposal]);
   }
+
+  public function DaftarPersyaratan(){
+    return view('depan.DaftarPersyaratan');
+  }
 }

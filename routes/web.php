@@ -16,6 +16,7 @@ Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
 Route::post('login', 'Auth\LoginController@login');
 
 Route::GET('/', 'DepanController@Beranda')->name('Home');
+Route::GET('/persyaratan', 'DepanController@DaftarPersyaratan')->name('Daftar-Persyaratan');
 
 Route::group(['middleware' => ['UserMiddleware']], function () {
   Route::GET('/admin', 'AdminController@Beranda')->name('Beranda');
@@ -88,9 +89,6 @@ Route::get('/admin/daftar_proposal/detail_proposal', function () {
 });
 
 //route public
-Route::get('/persyaratan', function () {
-    return view('public.persyaratan');
-});
 Route::get('/daftar_proposal', function () {
     return view('public.daftar_proposal');
 });

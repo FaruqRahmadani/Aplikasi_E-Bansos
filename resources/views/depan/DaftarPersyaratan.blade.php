@@ -1,7 +1,4 @@
-@extends('master_public.layout')
-@section('title')
-  Persyaratan dan Alur Pengajuan
-@endsection
+@extends('depan.layouts.master')
 @section('content')
   <div class="panel panel-container">
     <div class="row">
@@ -11,7 +8,6 @@
             Daftar Persyaratan
           </div>
           <div class="panel-body">
-            {{-- isian content --}}
             <ol>
               <li>Fotocopy KTP</li>
               <li>Fotocopy KTP</li>
@@ -20,10 +16,8 @@
               <li>Fotocopy KTP</li>
               <li>Fotocopy KTP</li>
             </ol>
-            {{-- batas isian content --}}
           </div>
         </div>
-        {{-- batas konten pertama --}}
         <div class="panel panel-default">
           <div class="panel-heading">
             Alur Pengajuan
@@ -80,5 +74,4 @@
       </div>
     </div>
   </div>
-
 @endsection

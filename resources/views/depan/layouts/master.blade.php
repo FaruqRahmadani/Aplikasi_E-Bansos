@@ -26,7 +26,7 @@
 				<a href="{{ Route('Home') }}"><em class="fa fa-home">&nbsp;</em> Home</a>
 			</li>
 			<li>
-				<a href="/persyaratan"><em class="fa fa-copy">&nbsp;</em> Daftar Persyaratan</a>
+				<a href="{{ Route('Daftar-Persyaratan') }}"><em class="fa fa-copy">&nbsp;</em> Daftar Persyaratan</a>
 			</li>
 			<li>
 				<a href="/daftar_proposal"><em class="fa fa-list">&nbsp;</em> Daftar Proposal</a>
