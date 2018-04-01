@@ -1,7 +1,4 @@
 @extends('depan.layouts.master')
-@section('title')
-  Data Proposal
-@endsection
 @section('content')
   <div class="panel panel-container">
     <div class="row">
@@ -40,7 +37,7 @@
                       </td>
                       <td  class="text-center">
                         <button-info
-                          url = {{ route('Info-Data-Proposal', ['Id' => IDCrypt::Encrypt($DataProposal->id)]) }}
+                          url = {{ route('Info-Daftar-Proposal', ['Id' => IDCrypt::Encrypt($DataProposal->id)]) }}
                         ></button-info>
                       </td>
                     </tr>

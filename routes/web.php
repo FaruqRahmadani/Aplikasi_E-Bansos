@@ -19,6 +19,7 @@ Route::GET('/', 'DepanController@Beranda')->name('Home');
 Route::GET('/persyaratan', 'DepanController@DaftarPersyaratan')->name('Daftar-Persyaratan');
 Route::GET('/kontak', 'DepanController@Kontak')->name('Kontak');
 Route::GET('/proposal', 'DepanController@DaftarProposal')->name('Daftar-Proposal');
+Route::GET('/proposal/{id}', 'DepanController@InfoDaftarProposal')->name('Info-Daftar-Proposal');
 
 Route::group(['middleware' => ['UserMiddleware']], function () {
   Route::GET('/admin', 'AdminController@Beranda')->name('Beranda');

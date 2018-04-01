@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use IDCrypt;
+
 use App\Proposal;
 
 class DepanController extends Controller
@@ -26,5 +28,12 @@ class DepanController extends Controller
     $Proposal = Proposal::all();
 
     return view('depan.ProposalDaftar', ['Proposal' => $Proposal]);
+  }
+
+  public function InfoDaftarProposal($Id){
+    $Id = IDCrypt::Decrypt($Id);
+    $Proposal = Proposal::findOrFail($Id);
+
+    return view('depan.ProposalInfo', ['Proposal' => $Proposal]);
   }
 }
