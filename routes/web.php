@@ -15,9 +15,7 @@ Route::GET('logout', 'Auth\LoginController@logout')->name('logout');
 Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
 Route::post('login', 'Auth\LoginController@login');
 
-Route::get('/', function () {
-    return view('public.beranda');
-});
+Route::GET('/', 'DepanController@Beranda')->name('Home');
 
 Route::group(['middleware' => ['UserMiddleware']], function () {
   Route::GET('/admin', 'AdminController@Beranda')->name('Beranda');

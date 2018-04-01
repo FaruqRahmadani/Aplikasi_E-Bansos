@@ -1,7 +1,4 @@
-@extends('master_public.layout')
-@section('title')
-  Beranda
-@endsection
+@extends('depan.layouts.master')
 @section('content')
   <div class="panel panel-container">
     <div class="row">
