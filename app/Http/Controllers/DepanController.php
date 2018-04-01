@@ -15,10 +15,14 @@ class DepanController extends Controller
   }
 
   public function DaftarPersyaratan(){
-    return view('depan.DaftarPersyaratan');
+    return view('depan.PersyaratanDaftar');
   }
 
   public function Kontak(){
     return view('depan.Kontak');
+  }
+
+  public function DaftarProposal(){
+    return view('depan.ProposalDaftar');
   }
 }

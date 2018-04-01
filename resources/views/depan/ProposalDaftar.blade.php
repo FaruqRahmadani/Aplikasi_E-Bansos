@@ -1,4 +1,4 @@
-@extends('master_public.layout')
+@extends('depan.layouts.master')
 @section('title')
   Data Proposal
 @endsection

@@ -29,7 +29,7 @@
 				<a href="{{ Route('Daftar-Persyaratan') }}"><em class="fa fa-copy">&nbsp;</em> Daftar Persyaratan</a>
 			</li>
 			<li>
-				<a href="/daftar_proposal"><em class="fa fa-list">&nbsp;</em> Daftar Proposal</a>
+				<a href="{{ Route('Daftar-Proposal') }}"><em class="fa fa-list">&nbsp;</em> Daftar Proposal</a>
 			</li>
 			<li>
 				<a href="{{ Route('Kontak') }}"><em class="fa fa-paper-plane">&nbsp;</em> Kontak</a>

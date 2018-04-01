@@ -18,6 +18,7 @@ Route::post('login', 'Auth\LoginController@login');
 Route::GET('/', 'DepanController@Beranda')->name('Home');
 Route::GET('/persyaratan', 'DepanController@DaftarPersyaratan')->name('Daftar-Persyaratan');
 Route::GET('/kontak', 'DepanController@Kontak')->name('Kontak');
+Route::GET('/proposal', 'DepanController@DaftarProposal')->name('Daftar-Proposal');
 
 Route::group(['middleware' => ['UserMiddleware']], function () {
   Route::GET('/admin', 'AdminController@Beranda')->name('Beranda');
@@ -91,10 +92,10 @@ Route::get('/admin/daftar_proposal/detail_proposal', function () {
 
 //route public
 Route::get('/daftar_proposal', function () {
-    return view('public.daftar_proposal');
+    return view('depan.daftar_proposal');
 });
 Route::get('/daftar_proposal/detail_proposal', function () {
-    return view('public.detail_proposal');
+    return view('depan.detail_proposal');
 });
 
 Route::get('/home', 'HomeController@index')->name('home');
