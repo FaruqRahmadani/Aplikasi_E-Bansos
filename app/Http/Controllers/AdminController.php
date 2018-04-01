@@ -173,4 +173,26 @@ class AdminController extends Controller
 
     return redirect(route('Data-Proposal'))->with('success', 'Data Status Proposal Berhasil di Update');
   }
+
+  public function EditDataProposal($Id){
+    $Id = IDCrypt::Decrypt($Id);
+    $Proposal = Proposal::findOrFail($Id);
+
+    return view('admin.ProposalEdit', ['Proposal' => $Proposal]);
+  }
+
+  public function submitEditDataProposal(Request $request, $Id){
+    $Id = IDCrypt::Decrypt($Id);
+    $Proposal = Proposal::findOrFail($Id);
+    $Proposal->nomor = $request->nomor_proposal;
+    $Proposal->tanggal_proposal = $request->tanggal_proposal;
+    $Proposal->perihal = $request->perihal_proposal;
+    $Proposal->kelengkapan = $request->kelengkapan_proposal;
+    $Proposal->tanggal_masuk = $request->tanggalmasuk_proposal;
+    $Proposal->kategori = $request->kategori_proposal;
+
+    $Proposal->save();
+
+    return redirect(route('Data-Proposal'))->with('success', 'Data Status Proposal Berhasil di Edit');
+  }
 }

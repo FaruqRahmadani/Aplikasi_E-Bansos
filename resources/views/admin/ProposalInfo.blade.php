@@ -115,9 +115,9 @@
                 url = {{ route('Delete-Data-Proposal', ['Id' => IDCrypt::Encrypt($Proposal->id)]) }}
                 jumlah = 0
               ></button-delete>
-              <a href="">
-                <button type="button" class="btn btn-info btn-fill">Edit</button>
-              </a>
+              <button-edit
+                url = {{ route('Edit-Data-Proposal', ['Id' => IDCrypt::Encrypt($Proposal->id)]) }}
+              ></button-edit>
             </div>
           </div>
         </div>
