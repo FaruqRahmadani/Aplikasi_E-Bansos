@@ -47,24 +47,39 @@
 					<li {{RouteHelper::ActiveRoute('Data-Proposal')}}>
 						<a href="{{ Route('Data-Proposal') }}"><em class="fa fa-list">&nbsp;</em> Daftar Proposal</a>
 					</li>
+					{{-- <li class="parent "><a data-toggle="collapse" href="#sub-item-1">
+					<li {{RouteHelper::ActiveRoute('Data-Instansi')}}>
+						<a href="{{ Route('Data-Instansi') }}"><em class="fa fa-list">&nbsp;</em> Daftar Instansi</a>
+					</li>
+					<li {{RouteHelper::ActiveRoute('Data-Proposal')}}>
+						<a href="{{ Route('Data-Proposal') }}"><em class="fa fa-list">&nbsp;</em> Daftar Proposal</a>
+					</li>
 					<li class="parent "><a data-toggle="collapse" href="#sub-item-1">
 						<em class="fa  fa-globe">&nbsp;</em> Daftar daerah <span data-toggle="collapse" href="#sub-item-1" class="icon pull-right"><em class="fa fa-plus"></em></span>
 					</a>
 					<ul class="children collapse" id="sub-item-1">
-						<li><a class="" href="/admin/daftar_provinsi">
-							<span class="fa fa-arrow-right">&nbsp;</span> Data Provinsi
-						</a></li>
-						<li><a class="" href="/admin/daftar_kota">
-							<span class="fa fa-arrow-right">&nbsp;</span> Data Kab/Kota
-						</a></li>
-						<li><a class="" href="/admin/daftar_kecamatan">
-							<span class="fa fa-arrow-right">&nbsp;</span> Data Kecamatan
-						</a></li>
-						<li><a class="" href="/admin/daftar_kelurahan">
-							<span class="fa fa-arrow-right">&nbsp;</span> Data Kelurahan
-						</a></li>
+						<li {{RouteHelper::ActiveRoute('Data-Provinsi')}}>
+							<a href="{{ Route('Data-Provinsi') }}">
+								<span class="fa fa-arrow-right">&nbsp;</span> Data Provinsi
+							</a>
+						</li>
+						<li {{RouteHelper::ActiveRoute('Data-Kota')}}>
+							<a class="" href="{{ Route('Data-Kota') }}">
+								<span class="fa fa-arrow-right">&nbsp;</span> Data Kab/Kota
+							</a>
+						</li>
+						<li {{RouteHelper::ActiveRoute('Data-Kecamatan')}}>
+							<a class="" href="{{ Route('Data-Kecamatan') }}">
+								<span class="fa fa-arrow-right">&nbsp;</span> Data Kecamatan
+							</a>
+						</li>
+						<li {{RouteHelper::ActiveRoute('Data-Kelurahan')}}>
+							<a class="" href="{{ Route('Data-Kelurahan') }}">
+								<span class="fa fa-arrow-right">&nbsp;</span> Data Kelurahan
+							</a>
+						</li>
 					</ul>
-				</li>
+				</li> --}}
 				<br>
 				<br>
 				<div class="divider"></div>

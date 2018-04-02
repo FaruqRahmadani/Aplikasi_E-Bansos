@@ -211,6 +211,7 @@ return [
         'Tanggal' => App\Helpers\TanggalHelper::class,
         'RouteHelper' => App\Helpers\RouteHelper::class,
         'IDCrypt' => App\Helpers\IDCryptHelper::class,
+        'Daerah' => App\Helpers\DaerahHelper::class,
         'Proposal' => App\Helpers\ProposalHelper::class,
     ],
 

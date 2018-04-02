@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use Daerah;
 use IDCrypt;
 
 use App\Kota;
@@ -133,6 +134,141 @@ class AdminController extends Controller
     $Pemohon = Pemohon::findOrFail($Id);
 
     return view('admin.PemohonInfo', ['Pemohon' => $Pemohon]);
+  }
+
+  public function DataProvinsi(){
+    $Provinsi = Provinsi::all();
+
+    return view('admin.ProvinsiData', ['Provinsi' => $Provinsi]);
+  }
+
+  public function DeleteDataProvinsi($Id){
+    $Id = IDCrypt::Decrypt($Id);
+    $Provinsi = Provinsi::findOrFail($Id);
+    $Provinsi->delete();
+
+    return redirect(route('Data-Provinsi'))->with('success', 'Hapus Data Provinsi Berhasil');
+  }
+
+  public function EditDataProvinsi($Id){
+    $Id = IDCrypt::Decrypt($Id);
+    $Provinsi = Provinsi::findOrFail($Id);
+
+    return view('admin.ProvinsiEdit', ['Provinsi' => $Provinsi]);
+  }
+
+  public function SubmitEditDataProvinsi(Request $request, $Id){
+    $Id = IDCrypt::Decrypt($Id);
+    $Provinsi = Provinsi::findOrFail($Id);
+    $Provinsi->nama_provinsi = $request->nama_provinsi;
+    $Provinsi->save();
+
+    return redirect(route('Data-Provinsi'))->with('success', 'Edit Data Provinsi Berhasil');
+  }
+
+  public function TambahDataProvinsi(){
+    return view('admin.ProvinsiTambah');
+  }
+
+  public function SubmitTambahDataProvinsi(Request $request){
+    $Provinsi = new Provinsi;
+    $Provinsi->nama_provinsi = $request->nama_provinsi;
+    $Provinsi->save();
+
+    return redirect(route('Data-Provinsi'))->with('success', 'Tambah Data Provinsi Berhasil');
+  }
+
+  public function DataKota(){
+    $Kota = Kota::all();
+    return view('admin.KotaData', ['Kota' => $Kota]);
+  }
+
+  public function DeleteDataKota($Id){
+    $Id = IDCrypt::Decrypt($Id);
+    $Kota = Kota::findOrFail($Id);
+    $Kota->delete();
+
+    return redirect(route('Data-Kota'))->with('success', 'Hapus Data Kota Berhasil');
+  }
+
+  public function EditDataKota($Id){
+    $Id = IDCrypt::Decrypt($Id);
+    $Kota = Kota::findOrFail($Id);
+    $Provinsi = Provinsi::all();
+
+    return view('admin.KotaEdit', ['Kota' => $Kota, 'Provinsi' => $Provinsi]);
+  }
+
+  public function submitEditDataKota(Request $request, $Id){
+    $Id = IDCrypt::Decrypt($Id);
+    $Kota = Kota::findOrFail($Id);
+    $Kota->nama_kota = $request->nama_kota;
+    $Kota->provinsi_id = $request->provinsi_id;
+    $Kota->save();
+
+    return redirect(route('Data-Kota'))->with('success', 'Edit Data Kota Berhasil');
+  }
+
+  public function TambahDataKota(){
+    $Provinsi = Provinsi::all();
+
+    return view('admin.KotaTambah', ['Provinsi' => $Provinsi]);
+  }
+
+  public function submitTambahDataKota(Request $request){
+    $Kota = new Kota;
+    $Kota->nama_kota = $request->nama_kota;
+    $Kota->provinsi_id = $request->provinsi_id;
+    $Kota->save();
+
+    return redirect(route('Data-Kota'))->with('success', 'Tambah Data Kota Berhasil');
+  }
+
+  public function DataKecamatan(){
+    $Kecamatan = Kecamatan::all();
+
+    return view('admin.KecamatanData', ['Kecamatan' => $Kecamatan]);
+  }
+
+  public function DeleteDataKecamatan(){
+    dd('Maaf something wrong, bingung logikanya kyp ni');
+  }
+
+  public function EditDataKecamatan($Id){
+    $Id = IDCrypt::Decrypt($Id);
+    $Kecamatan = Kecamatan::findOrFail($Id);
+
+    return view('admin.KecamatanEdit', ['Kecamatan' => $Kecamatan]);
+  }
+
+  public function submitEditDataKecamatan(Request $request, $Id){
+    $Id = IDCrypt::Decrypt($Id);
+    $Kecamatan = Kecamatan::findOrFail($Id);
+    $Kecamatan->nama_kecamatan = $request->nama_kecamatan;
+    $Kecamatan->kota_id = $request->kota_id;
+    $Kecamatan->save();
+
+    return redirect(route('Data-Kecamatan'))->with('success', 'Edit Data Kecamatan Berhasil');
+  }
+
+  public function TambahDataKecamatan(){
+    return view('admin.KecamatanTambah');
+  }
+
+  public function submitTambahDataKecamatan(Request $request){
+    $Kecamatan = new Kecamatan;
+    $Kecamatan->nama_kecamatan = $request->nama_kecamatan;
+    $Kecamatan->kota_id = $request->kota_id;
+    $Kecamatan->save();
+
+    return redirect(route('Data-Kecamatan'))->with('success', 'Tambah Data Kecamatan Berhasil');
+  }
+
+  public function DataKelurahan(){
+    $Kelurahan = Kelurahan::all();
+    dd($Kelurahan);
+
+    return view('admin.KelurahanData', ['Kelurahan' => $Kelurahan]);
   }
 
   public function DataProposal(){

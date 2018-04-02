@@ -13,3 +13,7 @@
 .hidden-template{
   display: none;
 }
+
+.no-padding-top{
+  padding-top: 0;
+}

@@ -12158,7 +12158,7 @@ module.exports = Cancel;
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(13);
-module.exports = __webpack_require__(86);
+module.exports = __webpack_require__(89);
 
 
 /***/ }),
@@ -51827,6 +51827,9 @@ Vue.component('field-daerahkeckel', __webpack_require__(74));
 Vue.component('button-delete', __webpack_require__(77));
 Vue.component('button-edit', __webpack_require__(80));
 Vue.component('button-info', __webpack_require__(83));
+Vue.component('button-header', __webpack_require__(100));
+Vue.component('field-daerah-provkota', __webpack_require__(103));
+Vue.component('button-updateproposal', __webpack_require__(86));
 
 var vm = new Vue({
   el: '#app',
@@ -54295,32 +54298,41 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-  props: ['url'],
+  props: ['url', 'jumlah'],
   methods: {
-    hapus: function hapus(link) {
-      swal({
-        title: "Hapus",
-        text: "Yakin Ingin Hapus Data?",
-        icon: "warning",
-        buttons: ["Batal", "Hapus"]
-      }).then(function (hapus) {
-        if (hapus) {
-          swal({
-            title: "Berhasil",
-            text: "Data Akan dihapus",
-            icon: "success",
-            timer: 2500
-          });
-          window.location = link;
-        } else {
-          swal({
-            title: "Batal",
-            text: "Data Batal dihapus",
-            icon: "info",
-            timer: 2500
-          });
-        }
-      });
+    hapus: function hapus(link, jumlah) {
+      if (jumlah == 0) {
+        swal({
+          title: "Hapus",
+          text: "Yakin Ingin Hapus Data?",
+          icon: "warning",
+          buttons: ["Batal", "Hapus"]
+        }).then(function (hapus) {
+          if (hapus) {
+            swal({
+              title: "Berhasil",
+              text: "Data Akan dihapus",
+              icon: "success",
+              timer: 2500
+            });
+            window.location = link;
+          } else {
+            swal({
+              title: "Batal",
+              text: "Data Batal dihapus",
+              icon: "info",
+              timer: 2500
+            });
+          }
+        });
+      } else {
+        swal({
+          title: "Hapus",
+          text: "Data tidak bisa dihapus karena ada data relasi",
+          icon: "warning",
+          buttons: "OK"
+        });
+      }
     }
   }
 });
@@ -54339,7 +54351,7 @@ var render = function() {
       staticClass: "btn btn-sm btn-danger",
       on: {
         click: function($event) {
-          _vm.hapus(_vm.url)
+          _vm.hapus(_vm.url, _vm.jumlah)
         }
       }
     },
@@ -54556,9 +54568,454 @@ if (false) {
 
 /***/ }),
 /* 86 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var normalizeComponent = __webpack_require__(1)
+/* script */
+var __vue_script__ = __webpack_require__(87)
+/* template */
+var __vue_template__ = __webpack_require__(88)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/assets/js/components/ButtonUpdateProposal.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-ae45f238", Component.options)
+  } else {
+    hotAPI.reload("data-v-ae45f238", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 87 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  props: ['url'],
+  methods: {
+    update: function update(link) {
+      window.location = link;
+    }
+  }
+});
+
+/***/ }),
+/* 88 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "button",
+    {
+      staticClass: "btn btn-sm btn-success",
+      attrs: { type: "button" },
+      on: {
+        click: function($event) {
+          _vm.update(_vm.url)
+        }
+      }
+    },
+    [_vm._v("Update")]
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-ae45f238", module.exports)
+  }
+}
+
+/***/ }),
+/* 89 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 90 */,
+/* 91 */,
+/* 92 */,
+/* 93 */,
+/* 94 */,
+/* 95 */,
+/* 96 */,
+/* 97 */,
+/* 98 */,
+/* 99 */,
+/* 100 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var normalizeComponent = __webpack_require__(1)
+/* script */
+var __vue_script__ = __webpack_require__(101)
+/* template */
+var __vue_template__ = __webpack_require__(102)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/assets/js/components/ButtonHeader.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-19eb1296", Component.options)
+  } else {
+    hotAPI.reload("data-v-19eb1296", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 101 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  props: ['url', 'judul'],
+  methods: {
+    redirect: function redirect(link) {
+      window.location = link;
+    }
+  }
+});
+
+/***/ }),
+/* 102 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "button",
+    {
+      staticClass: "btn btn-sm btn-info",
+      attrs: { type: "button" },
+      on: {
+        click: function($event) {
+          _vm.redirect(_vm.url)
+        }
+      }
+    },
+    [_c("b", [_vm._v(_vm._s(_vm.judul))])]
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-19eb1296", module.exports)
+  }
+}
+
+/***/ }),
+/* 103 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var normalizeComponent = __webpack_require__(1)
+/* script */
+var __vue_script__ = __webpack_require__(104)
+/* template */
+var __vue_template__ = __webpack_require__(105)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/assets/js/components/FieldDaerah-ProvKota.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-bab00dda", Component.options)
+  } else {
+    hotAPI.reload("data-v-bab00dda", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 104 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  props: ['auth', 'selectedprovinsi', 'selectedkota'],
+  data: function data() {
+    return {
+      datadaerah: ''
+    };
+  },
+  mounted: function mounted() {
+    var _this = this;
+
+    axios({
+      method: 'get',
+      url: '/api/datadaerah',
+      headers: { Authorization: 'Bearer ' + this.auth }
+    }).then(function (response) {
+      _this.datadaerah = response.data;
+    });
+    this.searchkelurahan(this.selectedkecamatan);
+  },
+  computed: {
+    filteredKota: function filteredKota() {
+      var _this2 = this;
+
+      if (this.datadaerah.Kota) {
+        return this.datadaerah.Kota.filter(function (rol) {
+          return rol.provinsi_id == _this2.selectedprovinsi;
+        });
+      }
+    }
+  }
+});
+
+/***/ }),
+/* 105 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", [
+    _c("div", { staticClass: "row" }, [
+      _c("div", { staticClass: "col-md-12" }, [
+        _c("div", { staticClass: "form-group" }, [
+          _c("label", [_vm._v("Provinsi")]),
+          _vm._v(" "),
+          _c(
+            "select",
+            {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.selectedprovinsi,
+                  expression: "selectedprovinsi"
+                }
+              ],
+              staticClass: "form-control",
+              attrs: { name: "provinsi_id", required: "" },
+              on: {
+                change: function($event) {
+                  var $$selectedVal = Array.prototype.filter
+                    .call($event.target.options, function(o) {
+                      return o.selected
+                    })
+                    .map(function(o) {
+                      var val = "_value" in o ? o._value : o.value
+                      return val
+                    })
+                  _vm.selectedprovinsi = $event.target.multiple
+                    ? $$selectedVal
+                    : $$selectedVal[0]
+                }
+              }
+            },
+            [
+              _c("option", { attrs: { value: "", selected: "", hidden: "" } }, [
+                _vm._v("Provinsi")
+              ]),
+              _vm._v(" "),
+              _vm._l(_vm.datadaerah.Provinsi, function(dataprovinsi) {
+                return _c("option", { domProps: { value: dataprovinsi.id } }, [
+                  _vm._v(_vm._s(dataprovinsi.nama_provinsi))
+                ])
+              })
+            ],
+            2
+          )
+        ])
+      ])
+    ]),
+    _vm._v(" "),
+    _c("div", { staticClass: "row" }, [
+      _c("div", { staticClass: "col-md-12" }, [
+        _c("div", { staticClass: "form-group" }, [
+          _c("label", [_vm._v("Kota/Kabupaten")]),
+          _vm._v(" "),
+          _c(
+            "select",
+            {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.selectedkota,
+                  expression: "selectedkota"
+                }
+              ],
+              staticClass: "form-control",
+              attrs: { name: "kota_id", required: "" },
+              on: {
+                change: function($event) {
+                  var $$selectedVal = Array.prototype.filter
+                    .call($event.target.options, function(o) {
+                      return o.selected
+                    })
+                    .map(function(o) {
+                      var val = "_value" in o ? o._value : o.value
+                      return val
+                    })
+                  _vm.selectedkota = $event.target.multiple
+                    ? $$selectedVal
+                    : $$selectedVal[0]
+                }
+              }
+            },
+            [
+              _c("option", { attrs: { value: "", selected: "", hidden: "" } }, [
+                _vm._v("Kota/Kabupaten")
+              ]),
+              _vm._v(" "),
+              _vm._l(_vm.filteredKota, function(datakota) {
+                return _c("option", { domProps: { value: datakota.id } }, [
+                  _vm._v(_vm._s(datakota.nama_kota))
+                ])
+              })
+            ],
+            2
+          )
+        ])
+      ])
+    ])
+  ])
+}
+var staticRenderFns = []
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-bab00dda", module.exports)
+  }
+}
 
 /***/ })
 /******/ ]);
