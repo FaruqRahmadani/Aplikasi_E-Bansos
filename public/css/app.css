@@ -13525,3 +13525,7 @@ div.table-responsive > div.dataTables_wrapper > div.row > div[class^="col-"]:las
   display: none;
 }
 
+.no-padding-top {
+  padding-top: 0;
+}
+
