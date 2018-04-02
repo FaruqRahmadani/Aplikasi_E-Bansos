@@ -7,6 +7,8 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Instansi extends Model
 {
+  use SoftDeletes;
+
   public function Kecamatan(){
     return $this->belongsTo('App\Kecamatan');
   }
