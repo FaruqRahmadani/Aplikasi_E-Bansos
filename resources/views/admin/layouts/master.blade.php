@@ -44,6 +44,13 @@
 					<li><a href="/admin/daftar_instansi"><em class="fa fa-list">&nbsp;</em> Daftar Instansi</a></li>
 					<li><a href="/admin/daftar_proposal"><em class="fa fa-list">&nbsp;</em> Daftar Proposal</a></li>
 					{{-- <li class="parent "><a data-toggle="collapse" href="#sub-item-1">
+					<li {{RouteHelper::ActiveRoute('Data-Instansi')}}>
+						<a href="{{ Route('Data-Instansi') }}"><em class="fa fa-list">&nbsp;</em> Daftar Instansi</a>
+					</li>
+					<li {{RouteHelper::ActiveRoute('Data-Proposal')}}>
+						<a href="{{ Route('Data-Proposal') }}"><em class="fa fa-list">&nbsp;</em> Daftar Proposal</a>
+					</li>
+					<li class="parent "><a data-toggle="collapse" href="#sub-item-1">
 						<em class="fa  fa-globe">&nbsp;</em> Daftar daerah <span data-toggle="collapse" href="#sub-item-1" class="icon pull-right"><em class="fa fa-plus"></em></span>
 					</a>
 					<ul class="children collapse" id="sub-item-1">

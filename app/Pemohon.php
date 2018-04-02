@@ -18,4 +18,8 @@ class Pemohon extends Model
   public function Kota(){
     return $this->belongsTo('App\Kota');
   }
+
+  public function Kelurahan(){
+    return $this->belongsTo('App\Kelurahan');
+  }
 }

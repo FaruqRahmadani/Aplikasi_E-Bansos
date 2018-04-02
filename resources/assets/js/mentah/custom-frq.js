@@ -5,11 +5,13 @@ Vue.component('form-pemohon', require('./../components/FormPemohon.vue'));
 Vue.component('form-instansi', require('./../components/FormInstansi.vue'));
 Vue.component('form-proposal', require('./../components/FormProposal.vue'));
 Vue.component('field-daerah', require('./../components/FieldDaerah.vue'));
+Vue.component('field-daerahkeckel', require('./../components/FieldDaerahKecKel.vue'));
 Vue.component('button-delete', require('./../components/ButtonDelete.vue'));
 Vue.component('button-edit', require('./../components/ButtonEdit.vue'));
 Vue.component('button-info', require('./../components/ButtonInfo.vue'));
 Vue.component('button-header', require('./../components/ButtonHeader.vue'));
 Vue.component('field-daerah-provkota', require('./../components/FieldDaerah-ProvKota.vue'));
+Vue.component('button-updateproposal', require('./../components/ButtonUpdateProposal.vue'));
 
 var vm = new Vue({
   el: '#app',
