@@ -41,7 +41,9 @@
 					<li {{RouteHelper::ActiveRoute('Data-Pemohon')}}>
 						<a href="{{ Route('Data-Pemohon') }}"><em class="fa fa-list">&nbsp;</em> Daftar Pemohon</a>
 					</li>
-					<li><a href="/admin/daftar_instansi"><em class="fa fa-list">&nbsp;</em> Daftar Instansi</a></li>
+					<li {{RouteHelper::ActiveRoute('Data-Instansi')}}>
+						<a href="{{ Route('Data-Instansi') }}"><em class="fa fa-list">&nbsp;</em> Daftar Instansi</a>
+					</li>
 					<li {{RouteHelper::ActiveRoute('Data-Proposal')}}>
 						<a href="{{ Route('Data-Proposal') }}"><em class="fa fa-list">&nbsp;</em> Daftar Proposal</a>
 					</li>
