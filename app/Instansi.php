@@ -9,11 +9,11 @@ class Instansi extends Model
 {
   use SoftDeletes;
 
-  public function Kelurahan(){
-    return $this->belongsTo('App\Kelurahan');
-  }
-
   public function Kecamatan(){
     return $this->belongsTo('App\Kecamatan');
+  }
+
+  public function Kelurahan(){
+    return $this->belongsTo('App\Kelurahan');
   }
 }

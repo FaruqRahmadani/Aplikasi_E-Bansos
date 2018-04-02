@@ -18,7 +18,9 @@ use App\StatusProposal;
 class AdminController extends Controller
 {
   public function Beranda(){
-    return view('admin.Beranda');
+    $Proposal = Proposal::all();
+
+    return view('admin.Beranda', ['Proposal' => $Proposal]);
   }
 
   public function InputData(){
@@ -131,6 +133,67 @@ class AdminController extends Controller
     $Pemohon = Pemohon::findOrFail($Id);
 
     return view('admin.PemohonInfo', ['Pemohon' => $Pemohon]);
+  }
+
+  public function DataProposal(){
+    $Proposal = Proposal::all();
+
+    return view('admin.ProposalData', ['Proposal' => $Proposal]);
+  }
+
+  public function DeleteDataProposal($Id){
+    $Id = IDCrypt::Decrypt($Id);
+    $Proposal = Proposal::findOrFail($Id);
+    $Proposal->delete();
+
+    return redirect(route('Data-Proposal'))->with('success', 'Data Berhasil di Hapus');
+  }
+
+  public function InfoDataProposal($Id){
+    $Id = IDCrypt::Decrypt($Id);
+    $Proposal = Proposal::findOrFail($Id);
+
+    return view('admin.ProposalInfo', ['Proposal' => $Proposal]);
+  }
+
+  public function UpdateDataProposal($Id){
+    return view('admin.ProposalUpdate', ['Id' => $Id]);
+  }
+
+  public function submitUpdateDataProposal(Request $request, $Id){
+    $Id = IDCrypt::Decrypt($Id);
+    $StatusProposal = new StatusProposal;
+    $StatusProposal->tujuan = $request->tujuan;
+    $StatusProposal->nomor_surat = $request->nomor_surat;
+    $StatusProposal->perihal = $request->perihal;
+    $StatusProposal->status = $request->status;
+    $StatusProposal->keterangan = $request->keterangan;
+    $StatusProposal->proposal_id = $Id;
+    $StatusProposal->save();
+
+    return redirect(route('Data-Proposal'))->with('success', 'Data Status Proposal Berhasil di Update');
+  }
+
+  public function EditDataProposal($Id){
+    $Id = IDCrypt::Decrypt($Id);
+    $Proposal = Proposal::findOrFail($Id);
+
+    return view('admin.ProposalEdit', ['Proposal' => $Proposal]);
+  }
+
+  public function submitEditDataProposal(Request $request, $Id){
+    $Id = IDCrypt::Decrypt($Id);
+    $Proposal = Proposal::findOrFail($Id);
+    $Proposal->nomor = $request->nomor_proposal;
+    $Proposal->tanggal_proposal = $request->tanggal_proposal;
+    $Proposal->perihal = $request->perihal_proposal;
+    $Proposal->kelengkapan = $request->kelengkapan_proposal;
+    $Proposal->tanggal_masuk = $request->tanggalmasuk_proposal;
+    $Proposal->kategori = $request->kategori_proposal;
+
+    $Proposal->save();
+
+    return redirect(route('Data-Proposal'))->with('success', 'Data Status Proposal Berhasil di Edit');
   }
 
   public function DataInstansi(){
