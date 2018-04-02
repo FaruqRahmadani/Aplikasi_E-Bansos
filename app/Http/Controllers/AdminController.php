@@ -132,4 +132,48 @@ class AdminController extends Controller
 
     return view('admin.PemohonInfo', ['Pemohon' => $Pemohon]);
   }
+
+  public function DataInstansi(){
+    $Instansi = Instansi::all();
+
+    return view('admin.InstansiData', ['Instansi' => $Instansi]);
+  }
+
+  public function DeleteDataInstansi($Id){
+    $Id = IDCrypt::Decrypt($Id);
+    $Instansi = Instansi::findOrFail($Id);
+    $Instansi->delete();
+
+    return redirect(route('Data-Instansi'))->with('success', 'Data Berhasil di Delete');
+  }
+
+  public function EditDataInstansi($Id){
+    $Id = IDCrypt::Decrypt($Id);
+    $Instansi = Instansi::findOrFail($Id);
+
+    return view('admin.InstansiEdit', ['Instansi' => $Instansi]);
+  }
+
+  public function SubmitEditDataInstansi(Request $request, $Id){
+    $Id = IDCrypt::Decrypt($Id);
+    $Instansi = Instansi::findOrFail($Id);
+
+    $Instansi->nama = $request->nama;
+    $Instansi->alamat = $request->alamat;
+    $Instansi->rt = $request->rt;
+    $Instansi->rw = $request->rw;
+    $Instansi->kecamatan_id = $request->kecamatan_id;
+    $Instansi->kelurahan_id = $request->kelurahan_id;
+
+    $Instansi->save();
+
+    return redirect(route('Data-Instansi'))->with('success', 'Data Berhasil di Edit');
+  }
+
+  public function InfoDataInstansi($Id){
+    $Id = IDCrypt::Decrypt($Id);
+    $Instansi = Instansi::findOrFail($Id);
+
+    return view('admin.InstansiInfo', ['Instansi' => $Instansi]);
+  }
 }

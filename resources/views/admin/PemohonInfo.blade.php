@@ -31,16 +31,16 @@
                     <tr>
                       <td width="30%" align="right">Alamat</td>
                       <td>
-                        {{$Pemohon->alamat}}
+                        {{$Pemohon->alamat}}, RT {{$Pemohon->rt}} / RW {{$Pemohon->rw}}, {{title_case($Pemohon->Kelurahan->nama_kelurahan)}}
                       </td>
                     </tr>
                     <tr>
                       <td width="30%" align="right">Kabupaten / Kota</td>
-                      <td>{{$Pemohon->Kota->nama_kota}}</td>
+                      <td>{{title_case($Pemohon->Kota->nama_kota)}}</td>
                     </tr>
                     <tr>
                       <td width="30%" align="right">Provinsi</td>
-                      <td>{{$Pemohon->Provinsi->nama_provinsi}}</td>
+                      <td>{{title_case($Pemohon->Provinsi->nama_provinsi)}}</td>
                     </tr>
                   </tbody>
                 </table>
