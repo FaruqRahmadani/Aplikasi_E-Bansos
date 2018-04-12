@@ -60,11 +60,11 @@
                     <div class="form-group">
                       <label>Kategori</label>
                       <select class="form-control" name="kategori_proposal" required>
-                        <option value="K1" {{$Proposal->kategori == "K1" ? 'selected' : ''}}>K1</option>
-                        <option value="K2" {{$Proposal->kategori == "K2" ? 'selected' : ''}} >K2</option>
-                        <option value="K3" {{$Proposal->kategori == "K3" ? 'selected' : ''}} >K3</option>
-                        <option value="K4" {{$Proposal->kategori == "K4" ? 'selected' : ''}} >K4</option>
-                        <option value="K5" {{$Proposal->kategori == "K5" ? 'selected' : ''}} >K5</option>
+                        <option value="Bidang Agama" {{$Proposal->kategori == "Bidang Agama" ? 'selected' : ''}}>Bidang Agama</option>
+                        <option value="Pendidikan" {{$Proposal->kategori == "Pendidikan" ? 'selected' : ''}} >Pendidikan</option>
+                        <option value="Pemuda dan Olahraga" {{$Proposal->kategori == "Pemuda dan Olahraga" ? 'selected' : ''}} >Pemuda dan Olahraga</option>
+                        <option value="Sosial Individu" {{$Proposal->kategori == "Sosial Individu" ? 'selected' : ''}} >Sosial Individu</option>
+                        <option value="Organisasi Kemasyarakatan" {{$Proposal->kategori == "Organisasi Kemasyarakatan" ? 'selected' : ''}} >Organisasi Kemasyarakatan</option>
                       </select>
                     </div>
                   </div>
