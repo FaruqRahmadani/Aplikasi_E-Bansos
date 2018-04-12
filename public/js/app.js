@@ -12158,7 +12158,7 @@ module.exports = Cancel;
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(13);
-module.exports = __webpack_require__(89);
+module.exports = __webpack_require__(95);
 
 
 /***/ }),
@@ -51827,9 +51827,9 @@ Vue.component('field-daerahkeckel', __webpack_require__(74));
 Vue.component('button-delete', __webpack_require__(77));
 Vue.component('button-edit', __webpack_require__(80));
 Vue.component('button-info', __webpack_require__(83));
-Vue.component('button-header', __webpack_require__(100));
-Vue.component('field-daerah-provkota', __webpack_require__(103));
-Vue.component('button-updateproposal', __webpack_require__(86));
+Vue.component('button-header', __webpack_require__(86));
+Vue.component('field-daerah-provkota', __webpack_require__(89));
+Vue.component('button-updateproposal', __webpack_require__(92));
 
 var vm = new Vue({
   el: '#app',
@@ -54592,121 +54592,6 @@ var Component = normalizeComponent(
   __vue_scopeId__,
   __vue_module_identifier__
 )
-Component.options.__file = "resources/assets/js/components/ButtonUpdateProposal.vue"
-
-/* hot reload */
-if (false) {(function () {
-  var hotAPI = require("vue-hot-reload-api")
-  hotAPI.install(require("vue"), false)
-  if (!hotAPI.compatible) return
-  module.hot.accept()
-  if (!module.hot.data) {
-    hotAPI.createRecord("data-v-ae45f238", Component.options)
-  } else {
-    hotAPI.reload("data-v-ae45f238", Component.options)
-  }
-  module.hot.dispose(function (data) {
-    disposed = true
-  })
-})()}
-
-module.exports = Component.exports
-
-
-/***/ }),
-/* 87 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-//
-//
-//
-//
-
-/* harmony default export */ __webpack_exports__["default"] = ({
-  props: ['url'],
-  methods: {
-    update: function update(link) {
-      window.location = link;
-    }
-  }
-});
-
-/***/ }),
-/* 88 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c(
-    "button",
-    {
-      staticClass: "btn btn-sm btn-success",
-      attrs: { type: "button" },
-      on: {
-        click: function($event) {
-          _vm.update(_vm.url)
-        }
-      }
-    },
-    [_vm._v("Update")]
-  )
-}
-var staticRenderFns = []
-render._withStripped = true
-module.exports = { render: render, staticRenderFns: staticRenderFns }
-if (false) {
-  module.hot.accept()
-  if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-ae45f238", module.exports)
-  }
-}
-
-/***/ }),
-/* 89 */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-/* 90 */,
-/* 91 */,
-/* 92 */,
-/* 93 */,
-/* 94 */,
-/* 95 */,
-/* 96 */,
-/* 97 */,
-/* 98 */,
-/* 99 */,
-/* 100 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var disposed = false
-var normalizeComponent = __webpack_require__(1)
-/* script */
-var __vue_script__ = __webpack_require__(101)
-/* template */
-var __vue_template__ = __webpack_require__(102)
-/* template functional */
-var __vue_template_functional__ = false
-/* styles */
-var __vue_styles__ = null
-/* scopeId */
-var __vue_scopeId__ = null
-/* moduleIdentifier (server only) */
-var __vue_module_identifier__ = null
-var Component = normalizeComponent(
-  __vue_script__,
-  __vue_template__,
-  __vue_template_functional__,
-  __vue_styles__,
-  __vue_scopeId__,
-  __vue_module_identifier__
-)
 Component.options.__file = "resources/assets/js/components/ButtonHeader.vue"
 
 /* hot reload */
@@ -54729,7 +54614,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 101 */
+/* 87 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -54751,7 +54636,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 102 */
+/* 88 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -54783,15 +54668,15 @@ if (false) {
 }
 
 /***/ }),
-/* 103 */
+/* 89 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(1)
 /* script */
-var __vue_script__ = __webpack_require__(104)
+var __vue_script__ = __webpack_require__(90)
 /* template */
-var __vue_template__ = __webpack_require__(105)
+var __vue_template__ = __webpack_require__(91)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -54830,7 +54715,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 104 */
+/* 90 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -54896,7 +54781,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 105 */
+/* 91 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -55016,6 +54901,111 @@ if (false) {
     require("vue-hot-reload-api")      .rerender("data-v-bab00dda", module.exports)
   }
 }
+
+/***/ }),
+/* 92 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var normalizeComponent = __webpack_require__(1)
+/* script */
+var __vue_script__ = __webpack_require__(93)
+/* template */
+var __vue_template__ = __webpack_require__(94)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/assets/js/components/ButtonUpdateProposal.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-ae45f238", Component.options)
+  } else {
+    hotAPI.reload("data-v-ae45f238", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 93 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  props: ['url'],
+  methods: {
+    update: function update(link) {
+      window.location = link;
+    }
+  }
+});
+
+/***/ }),
+/* 94 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "button",
+    {
+      staticClass: "btn btn-sm btn-success",
+      attrs: { type: "button" },
+      on: {
+        click: function($event) {
+          _vm.update(_vm.url)
+        }
+      }
+    },
+    [_vm._v("Update")]
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-ae45f238", module.exports)
+  }
+}
+
+/***/ }),
+/* 95 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
 
 /***/ })
 /******/ ]);
