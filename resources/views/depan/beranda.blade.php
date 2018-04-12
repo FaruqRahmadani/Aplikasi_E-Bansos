@@ -45,7 +45,7 @@
         <div class="panel-body timeline-container">
           <div class="row">
             <div class="col-md-10 col-md-offset-1">
-              <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1868.4070269813985!2d114.83439478877118!3d-3.44152173884752!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2de6810dad25bd57%3A0xf6e94df6af97a793!2sBadan+Pelayanan+Perijinan+Terpadu+Dan+Penanaman+Modal!5e0!3m2!1sid!2sid!4v1516288803390"
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3982.6344671960283!2d114.82880731493961!3d-3.438784642731773!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2de6817491bf1bfd%3A0x598d17189e3fd73d!2sPemerintah+Kota+Banjarbaru+Balaikota!5e0!3m2!1sid!2sid!4v1523497273926"
               width="100%" height="250px" frameborder="0" style="border:0" allowfullscreen></iframe>
             </div>
           </div>
@@ -62,11 +62,13 @@
                 SEKRETARIAT KOTA BANJARBARU</b>
                 <br>
                 <br>
-                Jl. Lorem ipsum dolor sit amet, Kel. Komet, Kec. Banjarbaru Utara - Kota Banjarbaru 
+                Jl. Panglima Batur Timur No.1, Kel. Loktabat Utara, Kec. Banjar Baru Utara, Kota Banjar Baru, Kalimantan Selatan  
                 <br>
-                99999999999 &nbsp; <i class="fa fa-phone"></i> 
+                70711 &nbsp; <i class="fa fa-envelope"></i>
                 <br>
-                99999999999 &nbsp; <i class="fa fa-fax"></i>
+                0511 4772569 &nbsp; <i class="fa fa-phone"></i> 
+                <br>
+                (FAX) 0511 4774269 &nbsp; <i class="fa fa-fax"></i>
                 <br> 
                 <br>
               </p>
