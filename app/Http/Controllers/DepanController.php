@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use IDCrypt;
+use Mail;
 
 use App\Proposal;
 
@@ -20,10 +21,6 @@ class DepanController extends Controller
     return view('depan.PersyaratanDaftar');
   }
 
-  public function Kontak(){
-    return view('depan.Kontak');
-  }
-
   public function DaftarProposal(){
     $Proposal = Proposal::all();
 
@@ -35,5 +32,19 @@ class DepanController extends Controller
     $Proposal = Proposal::findOrFail($Id);
 
     return view('depan.ProposalInfo', ['Proposal' => $Proposal]);
+  }
+
+  public function Kontak(){
+    return view('depan.Kontak');
+  }
+
+  public function submitKontak(Request $request){
+    Mail::send('mail.Kontak', ['request' => $request], function($mail) {
+      $mail->from('faruq@aleeva.id', 'Aplikasi Presensi');
+      $mail->to('faruq.rahmadani@gmail.com', 'Faruq Rahmadani');
+      $mail->subject('TESTING PANG NAH');
+    });
+
+    return redirect(route('Kontak'))->with('success', 'Email Berhasil Dikirimkan');
   }
 }

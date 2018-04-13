@@ -104,10 +104,10 @@
 		</div>
 	</div>
 	<script src="{{ asset('js/app.js') }}"></script>
-	<script type="text/javascript">
-		@if (session('success'))
+	@if (session('success'))
+		<script type="text/javascript">
 			notif('success', 'Berhasil', '{{session('success')}}');
-		@endif
-	</script>
+		</script>
+	@endif
 </body>
 </html>
