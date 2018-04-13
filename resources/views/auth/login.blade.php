@@ -30,5 +30,10 @@
 		</div>
 	</div>
 	<script src="{{ asset('js/app.js')}}"></script>
+	<script type="text/javascript">
+		@if (count($errors) != 0)
+			notif('error', 'Error', '{{$errors->first()}}');
+		@endif
+	</script>
 </body>
 </html>
