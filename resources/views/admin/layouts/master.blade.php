@@ -104,5 +104,10 @@
 		</div>
 	</div>
 	<script src="{{ asset('js/app.js') }}"></script>
+	<script type="text/javascript">
+		@if (session('success'))
+			notif('success', 'Berhasil', '{{session('success')}}');
+		@endif
+	</script>
 </body>
 </html>
