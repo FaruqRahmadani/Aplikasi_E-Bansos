@@ -51838,6 +51838,15 @@ var vm = new Vue({
   }
 });
 
+window.notif = function (tipe, judul, pesan) {
+  __WEBPACK_IMPORTED_MODULE_0_sweetalert___default()({
+    title: judul,
+    text: pesan,
+    icon: tipe,
+    button: "OK"
+  });
+};
+
 global.vm = vm;
 
 $(document).ready(function () {
@@ -53604,15 +53613,25 @@ var staticRenderFns = [
                 _vm._v("Kategori Jenis Bantuan")
               ]),
               _vm._v(" "),
-              _c("option", { attrs: { value: "K1" } }, [_vm._v("K1")]),
+              _c("option", { attrs: { value: "Bidang Agama" } }, [
+                _vm._v("Bidang Agama")
+              ]),
               _vm._v(" "),
-              _c("option", { attrs: { value: "K2" } }, [_vm._v("K2")]),
+              _c("option", { attrs: { value: "Pendidikan" } }, [
+                _vm._v("Pendidikan")
+              ]),
               _vm._v(" "),
-              _c("option", { attrs: { value: "K3" } }, [_vm._v("K3")]),
+              _c("option", { attrs: { value: "Pemuda dan Olahraga" } }, [
+                _vm._v("Pemuda dan Olahraga")
+              ]),
               _vm._v(" "),
-              _c("option", { attrs: { value: "K4" } }, [_vm._v("K4")]),
+              _c("option", { attrs: { value: "Sosial Individu" } }, [
+                _vm._v("Sosial Individu")
+              ]),
               _vm._v(" "),
-              _c("option", { attrs: { value: "K5" } }, [_vm._v("K5")])
+              _c("option", { attrs: { value: "Organisasi Kemasyarakatan" } }, [
+                _vm._v("Organisasi Kemasyarakatan")
+              ])
             ]
           )
         ])

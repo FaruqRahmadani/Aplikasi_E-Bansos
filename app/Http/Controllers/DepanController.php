@@ -40,8 +40,8 @@ class DepanController extends Controller
 
   public function submitKontak(Request $request){
     Mail::send('mail.Kontak', ['request' => $request], function($mail) {
-      $mail->from('faruq@aleeva.id', 'Aplikasi Presensi');
-      $mail->to('faruq.rahmadani@gmail.com', 'Faruq Rahmadani');
+      $mail->from('ebansospublic@gmail.com', 'Aplikasi E-Bansos [Kontak]');
+      $mail->to('ahmadsyauqi@merahputih.id', 'Faruq Rahmadani');
       $mail->subject('TESTING PANG NAH');
     });
 

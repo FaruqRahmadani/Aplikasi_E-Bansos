@@ -18,6 +18,7 @@ Route::post('login', 'Auth\LoginController@login');
 Route::GET('/', 'DepanController@Beranda')->name('Home');
 Route::GET('/persyaratan', 'DepanController@DaftarPersyaratan')->name('Daftar-Persyaratan');
 Route::GET('/kontak', 'DepanController@Kontak')->name('Kontak');
+Route::POST('/kontak', 'DepanController@submitKontak')->name('Submit-Kontak');
 Route::GET('/proposal', 'DepanController@DaftarProposal')->name('Daftar-Proposal');
 Route::GET('/proposal/{id}', 'DepanController@InfoDaftarProposal')->name('Info-Daftar-Proposal');
 
