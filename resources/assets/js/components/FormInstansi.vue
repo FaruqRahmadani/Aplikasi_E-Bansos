@@ -41,22 +41,39 @@
     <div class="row">
       <div class="col-md-12">
         <div class="form-group">
-          <label>Kecamatan</label>
-          <select class="form-control" name="kecamatan_id_instansi" v-model="selectedkecamatan" :disabled="selectedinstansi != ''" required>
-            <option value="" selected hidden>Kecamatan</option>
-            <option v-for="datakecamatan in datadaerah.Kecamatan" :value="datakecamatan.id">{{datakecamatan.nama_kecamatan}}</option>
-          </select>
+          <label>Daerah</label>
+          <div class="radio">
+            <label>
+              <input type="radio" name="daerah" value="dalamdaerah" v-model="selecteddaerah" required :disabled="selectedinstansi != ''">Dalam Daerah
+            </label>
+            <label>
+              <input type="radio" name="daerah" value="luardaerah" v-model="selecteddaerah" required :disabled="selectedinstansi != ''">Luar Daerah
+            </label>
+          </div>
         </div>
       </div>
     </div>
-    <div class="row">
-      <div class="col-md-12">
-        <div class="form-group">
-          <label>Kelurahan</label>
-          <select class="form-control" name="kelurahan_id_instansi" v-model="selectedkelurahan" :disabled="selectedinstansi != ''" required>
-            <option value="" selected hidden>Kelurahan</option>
-            <option v-for="datakelurahan in filteredKelurahan" :value="datakelurahan.id">{{datakelurahan.nama_kelurahan}}</option>
-          </select>
+    <div v-if="selecteddaerah == 'dalamdaerah'">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="form-group">
+            <label>Kecamatan</label>
+            <select class="form-control" name="kecamatan_id_instansi" v-model="selectedkecamatan" :disabled="selectedinstansi != ''" required>
+              <option value="" selected hidden>Kecamatan</option>
+              <option v-for="datakecamatan in datadaerah.Kecamatan" :value="datakecamatan.id">{{datakecamatan.nama_kecamatan}}</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <div class="form-group">
+            <label>Kelurahan</label>
+            <select class="form-control" name="kelurahan_id_instansi" v-model="selectedkelurahan" :disabled="selectedinstansi != ''" required>
+              <option value="" selected hidden>Kelurahan</option>
+              <option v-for="datakelurahan in filteredKelurahan" :value="datakelurahan.id">{{datakelurahan.nama_kelurahan}}</option>
+            </select>
+          </div>
         </div>
       </div>
     </div>
@@ -83,6 +100,7 @@ export default {
       nama_instansi: '',
       datainstansi: '',
       datadaerah: '',
+      selecteddaerah: 'dalamdaerah',
       selectedkecamatan: '',
       selectedkelurahan: '',
     }
@@ -111,6 +129,9 @@ export default {
       this.selectedinstansi = datainstansi
       this.selectedkecamatan = datainstansi.kecamatan_id
       this.selectedkelurahan = datainstansi.kelurahan_id
+      if (datainstansi.kelurahan_id == 0) {
+        this.selecteddaerah = 'luardaerah'
+      }
       this.nama_instansi = datainstansi.nama
     },
     changeform(form){
