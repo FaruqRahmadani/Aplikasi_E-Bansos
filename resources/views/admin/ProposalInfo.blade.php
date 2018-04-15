@@ -34,11 +34,11 @@
                 </tr>
                 <tr>
                   <td width="30%" class="text-right">Kecamatan</td>
-                  <td>{{$Proposal->Instansi->Kecamatan->nama_kecamatan}}</td>
+                  <td>{{$Proposal->Instansi->kecamatan_id ? $Proposal->Instansi->Kecamatan->nama_kecamatan : 'Luar Daerah'}}</td>
                 </tr>
                 <tr>
                   <td width="30%" class="text-right">Kelurahan</td>
-                  <td>{{$Proposal->Instansi->Kelurahan->nama_kelurahan}}</td>
+                  <td>{{$Proposal->Instansi->kelurahan_id ? $Proposal->Instansi->Kelurahan->nama_kelurahan : 'Luar Daerah'}}</td>
                 </tr>
               </tbody>
             </table>
