@@ -54214,17 +54214,36 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ['auth', 'selectedkecamatan', 'selectedkelurahan'],
   data: function data() {
     return {
-      datadaerah: ''
+      datadaerah: '',
+      selecteddaerah: ''
     };
   },
   mounted: function mounted() {
     var _this = this;
 
+    this.selecteddaerah = this.selectedkecamatan == 0 ? 'luardaerah' : 'dalamdaerah';
     axios({
       method: 'get',
       url: '/api/datadaerah-banjarbaru',
@@ -54263,88 +54282,162 @@ var render = function() {
     _c("div", { staticClass: "row" }, [
       _c("div", { staticClass: "col-md-12" }, [
         _c("div", { staticClass: "form-group" }, [
-          _c("label", [_vm._v("Kecamatan")]),
+          _c("label", [_vm._v("Daerah")]),
           _vm._v(" "),
-          _c(
-            "select",
-            {
-              directives: [
-                {
-                  name: "model",
-                  rawName: "v-model",
-                  value: _vm.selectedkecamatan,
-                  expression: "selectedkecamatan"
+          _c("div", { staticClass: "radio" }, [
+            _c("label", [
+              _c("input", {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.selecteddaerah,
+                    expression: "selecteddaerah"
+                  }
+                ],
+                attrs: {
+                  type: "radio",
+                  name: "daerah",
+                  value: "dalamdaerah",
+                  required: ""
+                },
+                domProps: {
+                  checked: _vm._q(_vm.selecteddaerah, "dalamdaerah")
+                },
+                on: {
+                  change: function($event) {
+                    _vm.selecteddaerah = "dalamdaerah"
+                  }
                 }
-              ],
-              staticClass: "form-control",
-              attrs: { name: "kecamatan_id", required: "" },
-              on: {
-                change: function($event) {
-                  var $$selectedVal = Array.prototype.filter
-                    .call($event.target.options, function(o) {
-                      return o.selected
-                    })
-                    .map(function(o) {
-                      var val = "_value" in o ? o._value : o.value
-                      return val
-                    })
-                  _vm.selectedkecamatan = $event.target.multiple
-                    ? $$selectedVal
-                    : $$selectedVal[0]
+              }),
+              _vm._v("Dalam Daerah\n          ")
+            ]),
+            _vm._v(" "),
+            _c("label", [
+              _c("input", {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.selecteddaerah,
+                    expression: "selecteddaerah"
+                  }
+                ],
+                attrs: {
+                  type: "radio",
+                  name: "daerah",
+                  value: "luardaerah",
+                  required: ""
+                },
+                domProps: { checked: _vm._q(_vm.selecteddaerah, "luardaerah") },
+                on: {
+                  change: function($event) {
+                    _vm.selecteddaerah = "luardaerah"
+                  }
                 }
-              }
-            },
-            [
-              _c("option", { attrs: { value: "", selected: "", hidden: "" } }, [
-                _vm._v("Kecamatan")
-              ]),
-              _vm._v(" "),
-              _vm._l(_vm.datadaerah.Kecamatan, function(datakecamatan) {
-                return _c("option", { domProps: { value: datakecamatan.id } }, [
-                  _vm._v(_vm._s(datakecamatan.nama_kecamatan))
-                ])
-              })
-            ],
-            2
-          )
+              }),
+              _vm._v("Luar Daerah\n          ")
+            ])
+          ])
         ])
       ])
     ]),
     _vm._v(" "),
-    _c("div", { staticClass: "row" }, [
-      _c("div", { staticClass: "col-md-12" }, [
-        _c("div", { staticClass: "form-group" }, [
-          _c("label", [_vm._v("Kelurahan")]),
-          _vm._v(" "),
-          _c(
-            "select",
-            {
-              staticClass: "form-control",
-              attrs: { name: "kelurahan_id", required: "" }
-            },
-            [
-              _c("option", { attrs: { value: "", selected: "", hidden: "" } }, [
-                _vm._v("Kelurahan")
-              ]),
-              _vm._v(" "),
-              _vm._l(_vm.filteredKelurahan, function(datakelurahan) {
-                return _c(
-                  "option",
+    _vm.selecteddaerah == "dalamdaerah"
+      ? _c("div", [
+          _c("div", { staticClass: "row" }, [
+            _c("div", { staticClass: "col-md-12" }, [
+              _c("div", { staticClass: "form-group" }, [
+                _c("label", [_vm._v("Kecamatan")]),
+                _vm._v(" "),
+                _c(
+                  "select",
                   {
-                    domProps: {
-                      value: datakelurahan.id,
-                      selected: datakelurahan.id == _vm.selectedkelurahan
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.selectedkecamatan,
+                        expression: "selectedkecamatan"
+                      }
+                    ],
+                    staticClass: "form-control",
+                    attrs: { name: "kecamatan_id", required: "" },
+                    on: {
+                      change: function($event) {
+                        var $$selectedVal = Array.prototype.filter
+                          .call($event.target.options, function(o) {
+                            return o.selected
+                          })
+                          .map(function(o) {
+                            var val = "_value" in o ? o._value : o.value
+                            return val
+                          })
+                        _vm.selectedkecamatan = $event.target.multiple
+                          ? $$selectedVal
+                          : $$selectedVal[0]
+                      }
                     }
                   },
-                  [_vm._v(_vm._s(datakelurahan.nama_kelurahan))]
+                  [
+                    _c(
+                      "option",
+                      { attrs: { value: "", selected: "", hidden: "" } },
+                      [_vm._v("Kecamatan")]
+                    ),
+                    _vm._v(" "),
+                    _vm._l(_vm.datadaerah.Kecamatan, function(datakecamatan) {
+                      return _c(
+                        "option",
+                        { domProps: { value: datakecamatan.id } },
+                        [_vm._v(_vm._s(datakecamatan.nama_kecamatan))]
+                      )
+                    })
+                  ],
+                  2
                 )
-              })
-            ],
-            2
-          )
+              ])
+            ])
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "row" }, [
+            _c("div", { staticClass: "col-md-12" }, [
+              _c("div", { staticClass: "form-group" }, [
+                _c("label", [_vm._v("Kelurahan")]),
+                _vm._v(" "),
+                _c(
+                  "select",
+                  {
+                    staticClass: "form-control",
+                    attrs: { name: "kelurahan_id", required: "" }
+                  },
+                  [
+                    _c(
+                      "option",
+                      { attrs: { value: "", selected: "", hidden: "" } },
+                      [_vm._v("Kelurahan")]
+                    ),
+                    _vm._v(" "),
+                    _vm._l(_vm.filteredKelurahan, function(datakelurahan) {
+                      return _c(
+                        "option",
+                        {
+                          domProps: {
+                            value: datakelurahan.id,
+                            selected: datakelurahan.id == _vm.selectedkelurahan
+                          }
+                        },
+                        [_vm._v(_vm._s(datakelurahan.nama_kelurahan))]
+                      )
+                    })
+                  ],
+                  2
+                )
+              ])
+            ])
+          ])
         ])
-      ])
-    ])
+      : _vm._e()
   ])
 }
 var staticRenderFns = []

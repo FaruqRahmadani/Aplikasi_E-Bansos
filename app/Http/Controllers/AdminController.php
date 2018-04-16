@@ -361,8 +361,8 @@ class AdminController extends Controller
     $Instansi->alamat = $request->alamat;
     $Instansi->rt = $request->rt;
     $Instansi->rw = $request->rw;
-    $Instansi->kecamatan_id = $request->kecamatan_id;
-    $Instansi->kelurahan_id = $request->kelurahan_id;
+    $Instansi->kecamatan_id = $request->daerah == 'dalamdaerah' ? $request->kecamatan_id : 0;
+    $Instansi->kelurahan_id = $request->daerah == 'dalamdaerah' ? $request->kelurahan_id : 0;
 
     $Instansi->save();
 
