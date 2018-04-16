@@ -60,11 +60,11 @@
                     <div class="form-group">
                       <label>Kategori</label>
                       <select class="form-control" name="kategori_proposal" required>
-                        <option value="Bidang Agama" {{$Proposal->kategori == "Bidang Agama" ? 'selected' : ''}}>Bidang Agama</option>
-                        <option value="Pendidikan" {{$Proposal->kategori == "Pendidikan" ? 'selected' : ''}} >Pendidikan</option>
-                        <option value="Pemuda dan Olahraga" {{$Proposal->kategori == "Pemuda dan Olahraga" ? 'selected' : ''}} >Pemuda dan Olahraga</option>
+                        <option value="Bidang Keagamaan" {{$Proposal->kategori == "Bidang Keagamaan" ? 'selected' : ''}}>Bidang Keagamaan</option>
+                        <option value="Bidang Pendidikan" {{$Proposal->kategori == "Bidang Pendidikan" ? 'selected' : ''}} >Bidang Pendidikan</option>
+                        <option value="Bidang Seni Budaya / Pemuda dan Olahraga" {{$Proposal->kategori == "Bidang Seni Budaya / Pemuda dan Olahraga" ? 'selected' : ''}} >Bidang Seni Budaya / Pemuda dan Olahraga</option>
+                        <option value="Bidang Organisasi Kemasyarakatan" {{$Proposal->kategori == "Bidang Organisasi Kemasyarakatan" ? 'selected' : ''}} >Bidang Organisasi Kemasyarakatan</option>
                         <option value="Sosial Individu" {{$Proposal->kategori == "Sosial Individu" ? 'selected' : ''}} >Sosial Individu</option>
-                        <option value="Organisasi Kemasyarakatan" {{$Proposal->kategori == "Organisasi Kemasyarakatan" ? 'selected' : ''}} >Organisasi Kemasyarakatan</option>
                       </select>
                     </div>
                   </div>
