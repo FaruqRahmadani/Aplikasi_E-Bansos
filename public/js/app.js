@@ -53712,24 +53712,30 @@ var staticRenderFns = [
                 _vm._v("Kategori Jenis Bantuan")
               ]),
               _vm._v(" "),
-              _c("option", { attrs: { value: "Bidang Agama" } }, [
-                _vm._v("Bidang Agama")
+              _c("option", { attrs: { value: "Bidang Keagamaan" } }, [
+                _vm._v("Bidang Keagamaan")
               ]),
               _vm._v(" "),
-              _c("option", { attrs: { value: "Pendidikan" } }, [
-                _vm._v("Pendidikan")
+              _c("option", { attrs: { value: "Bidang Pendidikan" } }, [
+                _vm._v("Bidang Pendidikan")
               ]),
               _vm._v(" "),
-              _c("option", { attrs: { value: "Pemuda dan Olahraga" } }, [
-                _vm._v("Pemuda dan Olahraga")
-              ]),
+              _c(
+                "option",
+                {
+                  attrs: { value: "Bidang Seni Budaya / Pemuda dan Olahraga" }
+                },
+                [_vm._v("Bidang Seni Budaya / Pemuda dan Olahraga")]
+              ),
+              _vm._v(" "),
+              _c(
+                "option",
+                { attrs: { value: "Bidang Organisasi Kemasyarakatan" } },
+                [_vm._v("Bidang Organisasi Kemasyarakatan")]
+              ),
               _vm._v(" "),
               _c("option", { attrs: { value: "Sosial Individu" } }, [
                 _vm._v("Sosial Individu")
-              ]),
-              _vm._v(" "),
-              _c("option", { attrs: { value: "Organisasi Kemasyarakatan" } }, [
-                _vm._v("Organisasi Kemasyarakatan")
               ])
             ]
           )
