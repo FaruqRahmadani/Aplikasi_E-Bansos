@@ -42,7 +42,7 @@ class DepanController extends Controller
     Mail::send('mail.Kontak', ['request' => $request], function($mail) {
       $mail->from('ebansospublic@gmail.com', 'Aplikasi E-Bansos [Kontak]');
       $mail->to('ahmadsyauqi@merahputih.id', 'Faruq Rahmadani');
-      $mail->subject('TESTING PANG NAH');
+      $mail->subject('Pesan dari E-Bansos');
     });
 
     return redirect(route('Kontak'))->with('success', 'Email Berhasil Dikirimkan');
