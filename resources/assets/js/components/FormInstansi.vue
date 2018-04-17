@@ -7,8 +7,9 @@
           <label>Nama Instansi</label>
           <input type="text" class="form-control border-input" maxlength="100" name="nama_instansi" @keyup="changenamainstansi" v-model="nama_instansi" required>
           <input type="hidden" class="form-control border-input" maxlength="100" name="id_instansi" :value="selectedinstansi.id">
+          <br>
           <ul>
-            <li v-if="selectedinstansi == ''" v-for="instansi in filteredInstansi" @click="selectinstansi(instansi)">{{instansi.nama}}</li>
+            <li onMouseOver="this.style.color='#3498DB'" onMouseOut="this.style.color='#000'" v-if="selectedinstansi == ''" v-for="instansi in filteredInstansi" @click="selectinstansi(instansi)"><b>{{instansi.nama}}</b><br><hr></li>
           </ul>
         </div>
       </div>
