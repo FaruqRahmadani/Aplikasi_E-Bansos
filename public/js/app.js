@@ -52923,6 +52923,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ['token', 'auth'],
@@ -53046,6 +53047,8 @@ var render = function() {
             domProps: { value: _vm.selectedinstansi.id }
           }),
           _vm._v(" "),
+          _c("br"),
+          _vm._v(" "),
           _c(
             "ul",
             _vm._l(_vm.filteredInstansi, function(instansi) {
@@ -53053,13 +53056,21 @@ var render = function() {
                 ? _c(
                     "li",
                     {
+                      attrs: {
+                        onMouseOver: "this.style.color='#3498DB'",
+                        onMouseOut: "this.style.color='#000'"
+                      },
                       on: {
                         click: function($event) {
                           _vm.selectinstansi(instansi)
                         }
                       }
                     },
-                    [_vm._v(_vm._s(instansi.nama))]
+                    [
+                      _c("b", [_vm._v(_vm._s(instansi.nama))]),
+                      _c("br"),
+                      _c("hr")
+                    ]
                   )
                 : _vm._e()
             })
