@@ -48,5 +48,9 @@ $('#table_id').DataTable({
       previous: "Sebelumnya&nbsp",
       next: "&nbspSelanjutnya",
     }
-  }
+  },
+  rowReorder: {
+  selector: 'td:nth-child(2)'
+  },
+  responsive: true
 });

@@ -12,6 +12,8 @@ require('./mentah/bootstrap')
 require('./mentah/bootstrap-datepicker')
 require('./mentah/jquery.dataTables.min')
 require('./mentah/jquery.dataTables.bootstrap.min')
+require('./mentah/dataTables.rowReorder.min')
+require('./mentah/dataTables.responsive.min')
 require('./mentah/custom')
 require('./mentah/custom-frq')
 

@@ -6,7 +6,7 @@
         <div class="panel panel-default">
           <div class="panel-body">
             <div class="col-md-12">
-              <table id="table_id" class="table table-striped table-advance table-bordered">
+              <table width="100%" id="table_id" class="table table-striped table-advance table-bordered">
                 <thead>
                   <tr>
                     <th class="text-center"> Tanggal Masuk</th>
