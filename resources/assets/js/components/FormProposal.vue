@@ -53,11 +53,11 @@
           <label>Kategori</label>
           <select class="form-control" name="kategori_proposal" required>
             <option value="" selected hidden>Kategori Jenis Bantuan</option>
-            <option value="K1">K1</option>
-            <option value="K2">K2</option>
-            <option value="K3">K3</option>
-            <option value="K4">K4</option>
-            <option value="K5">K5</option>
+            <option value="Bidang Keagamaan">Bidang Keagamaan</option>
+            <option value="Bidang Pendidikan">Bidang Pendidikan</option>
+            <option value="Bidang Seni Budaya / Pemuda dan Olahraga">Bidang Seni Budaya / Pemuda dan Olahraga</option>
+            <option value="Bidang Organisasi Kemasyarakatan">Bidang Organisasi Kemasyarakatan</option>
+            <option value="Sosial Individu">Sosial Individu</option>
           </select>
         </div>
       </div>

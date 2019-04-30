@@ -8,7 +8,7 @@
             Data @{{showform}}
           </div>
           <div class="panel-body">
-            <form action="{{ Route('Submit-Input-Data') }}" method="POST">
+            <form action="{{ Route('Submit-Input-Data') }}"  autocomplete="off" method="POST">
               <form-pemohon
                 v-bind:class="{ 'hidden-template': showform != 'Pemohon' }"
                 token = {{ csrf_token() }}

@@ -7,7 +7,8 @@
           <div class="panel-body">
             <div class="row">
               <div class="col-md-10">
-                <form class="form-horizontal" action="" method="post">
+                <form class="form-horizontal" action="{{ Route('Submit-Kontak') }}" method="post">
+                  {{csrf_field()}}
                   <fieldset>
                     <div class="form-group">
                       <label class="col-md-3 control-label" for="name">Nama</label>
