@@ -54,8 +54,8 @@ class AdminController extends Controller
       $Instansi->alamat = $request->alamat_instansi;
       $Instansi->rt = $request->rt_instansi;
       $Instansi->rw = $request->rw_instansi;
-      $Instansi->kecamatan_id = $request->kecamatan_id_instansi;
-      $Instansi->kelurahan_id = $request->kelurahan_id_instansi;
+      $Instansi->kecamatan_id = $request->daerah == 'dalamdaerah' ? $request->kecamatan_id_instansi : 0;
+      $Instansi->kelurahan_id = $request->daerah == 'dalamdaerah' ? $request->kelurahan_id_instansi : 0;
       $Instansi->save();
       $InstansiId = Instansi::orderBy('id', 'desc')
                             ->first()
@@ -361,8 +361,8 @@ class AdminController extends Controller
     $Instansi->alamat = $request->alamat;
     $Instansi->rt = $request->rt;
     $Instansi->rw = $request->rw;
-    $Instansi->kecamatan_id = $request->kecamatan_id;
-    $Instansi->kelurahan_id = $request->kelurahan_id;
+    $Instansi->kecamatan_id = $request->daerah == 'dalamdaerah' ? $request->kecamatan_id : 0;
+    $Instansi->kelurahan_id = $request->daerah == 'dalamdaerah' ? $request->kelurahan_id : 0;
 
     $Instansi->save();
 

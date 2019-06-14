@@ -9,7 +9,7 @@
         </div> --}}
         <div class="panel-body">
           <div class="col-md-12">
-            <table id="table_id" class="table table-striped table-advance table-bordered">
+            <table id="table_id" width="100%" class="table table-striped table-advance table-bordered">
               <thead>
                 <tr>
                   <th class="text-center"> NIK</th>

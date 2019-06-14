@@ -22,16 +22,16 @@
 	</nav>
 	<div id="sidebar-collapse" class="col-sm-3 col-lg-2 sidebar">
 		<ul class="nav menu">
-			<li class="">
+			<li {{RouteHelper::ActiveRoute('Home')}}>
 				<a href="{{ Route('Home') }}"><em class="fa fa-home">&nbsp;</em> Home</a>
 			</li>
-			<li>
+			<li {{RouteHelper::ActiveRoute('Daftar-Persyaratan')}}>
 				<a href="{{ Route('Daftar-Persyaratan') }}"><em class="fa fa-copy">&nbsp;</em> Daftar Persyaratan</a>
 			</li>
-			<li>
+			<li {{RouteHelper::ActiveRoute('Daftar-Proposal')}}>
 				<a href="{{ Route('Daftar-Proposal') }}"><em class="fa fa-list">&nbsp;</em> Daftar Proposal</a>
 			</li>
-			<li>
+			<li {{RouteHelper::ActiveRoute('Kontak')}}>
 				<a href="{{ Route('Kontak') }}"><em class="fa fa-paper-plane">&nbsp;</em> Kontak</a>
 			</li>
 		</ul>
@@ -56,4 +56,9 @@
 	</div>
 </body>
 <script src="{{ asset('js/app.js') }}"></script>
+@if (session('success'))
+	<script type="text/javascript">
+		notif('success', 'Berhasil', '{{session('success')}}');
+	</script>
+@endif
 </html>

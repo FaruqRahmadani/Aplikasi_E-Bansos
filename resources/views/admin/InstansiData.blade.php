@@ -9,7 +9,7 @@
         <div class="panel panel-default">
           <div class="panel-body">
             <div class="col-md-12">
-              <table id="table_id" class="table table-striped table-advance table-bordered">
+              <table id="table_id" width="100%" class="table table-striped table-advance table-bordered">
                 <thead>
                   <tr>
                     <th class="text-center"> Nama Instansi</th>
@@ -24,8 +24,8 @@
                     <tr>
                       <td>{{ $DataInstansi->nama }}</td>
                       <td>{{ $DataInstansi->alamat }}</td>
-                      <td>{{ $DataInstansi->Kelurahan->nama_kelurahan }}</td>
-                      <td>{{ $DataInstansi->Kecamatan->nama_kecamatan }}</td>
+                      <td>{{ $DataInstansi->kelurahan_id ? $DataInstansi->Kelurahan->nama_kelurahan : 'LUAR DAERAH' }}</td>
+                      <td>{{ $DataInstansi->kecamatan_id ? $DataInstansi->Kecamatan->nama_kecamatan : 'LUAR DAERAH' }}</td>
                       <td class="text-center">
                         <button-info
                           url= {{ route('Info-Data-Instansi', ['Id' => IDCrypt::Encrypt($DataInstansi->id)]) }}

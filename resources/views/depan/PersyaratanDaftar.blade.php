@@ -9,16 +9,17 @@
           </div>
           <div class="panel-body">
             <ol>
-              <li>Fotocopy KTP</li>
-              <li>Fotocopy KTP</li>
-              <li>Fotocopy KTP</li>
-              <li>Fotocopy KTP</li>
-              <li>Fotocopy KTP</li>
-              <li>Fotocopy KTP</li>
+              <li>Proposal 3 Rangkap</li>
+              <li>Pengantar</li>
+              <li>SK Pengurus</li>
+              <li>Fotocopy Berbadan Hukum</li>
+              <li>Fotocopy KTP Ketua dan Bendahara</li>
+              <li>Rekening Bank</li>
+              <li>NPWP</li>
             </ol>
           </div>
         </div>
-        <div class="panel panel-default">
+        {{-- <div class="panel panel-default">
           <div class="panel-heading">
             Alur Pengajuan
           </div>
@@ -70,7 +71,7 @@
               </li>
             </ul>
           </div>
-        </div>
+        </div> --}}
       </div>
     </div>
   </div>
